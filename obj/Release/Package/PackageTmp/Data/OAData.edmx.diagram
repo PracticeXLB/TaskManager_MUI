@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea27b60778d24959aa7c628e210594d2" Name="Diagram1">
+        <EntityTypeShape EntityType="DQDocModel.C__MigrationHistory" Width="1.5" PointX="16.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ApprovalFlowNode" Width="1.5" PointX="8" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ApprovalFlowRecord" Width="1.5" PointX="7.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ApprovalFlow" Width="1.5" PointX="5.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ArchivesContentFileMapping" Width="1.5" PointX="17.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ArchivesFileCatalogue" Width="1.5" PointX="9.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ArchivesFile" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ArchivesFileWarehous" Width="1.5" PointX="19.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Attachment" Width="1.5" PointX="19.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.AttachmentType" Width="1.5" PointX="19.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.BookMark" Width="1.5" PointX="17" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.CalibrationRecord" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.CalibrationRecordTemp" Width="1.5" PointX="21.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Calibration" Width="1.5" PointX="9.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ChartMapping" Width="1.5" PointX="17" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ColdStorage" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ColdStoreVerification" Width="1.5" PointX="21.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ColdStoreVerifySolution" Width="1.5" PointX="21.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.CommonDevice" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Company" Width="1.5" PointX="23.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ContractDetail" Width="1.5" PointX="15" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Contract" Width="1.5" PointX="12.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.CUser" Width="1.5" PointX="10" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.CustomBookMark" Width="1.5" PointX="23.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.CustomField" Width="1.5" PointX="23.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.CustomTemplate" Width="1.5" PointX="14.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.DataYear" Width="1.5" PointX="23.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Department" Width="1.5" PointX="23.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Document" Width="1.5" PointX="25.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Employee" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Fan" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.FieldMapping" Width="1.5" PointX="25.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.FieldValueMapping" Width="1.5" PointX="7.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.FileInfo" Width="1.5" PointX="25.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.GoodsInfo" Width="1.5" PointX="3" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.GoodsSale" Width="1.5" PointX="12.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.GoodsType" Width="1.5" PointX="9.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Incubator" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.IncubatorVerification" Width="1.5" PointX="11.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.IncubatorVerifySolution" Width="1.5" PointX="25.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Inventory" Width="1.5" PointX="5.25" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Invoice" Width="1.5" PointX="15" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.LogInfo" Width="1.5" PointX="13.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Menu" Width="1.5" PointX="25.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.OATask" Width="1.5" PointX="27.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Position" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Purchaser" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Refrigerator" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.RefrigeratorVerification" Width="1.5" PointX="27.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.RefrigeratorVerifySolution" Width="1.5" PointX="27.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Role" Width="1.5" PointX="10" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.RoleWithMenu" Width="1.5" PointX="15.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.RoleWithUser" Width="1.5" PointX="12.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.SaleOrderDetail" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.SaleOrder" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.ShortMessage" Width="1.5" PointX="17.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.StatusField" Width="1.5" PointX="27.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Supplyer" Width="1.5" PointX="14.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.SupplyOrderDetail" Width="1.5" PointX="19.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.SupplyOrder" Width="1.5" PointX="17" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Sys_Items" Width="1.5" PointX="23.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Sys_ItemsDetail" Width="1.5" PointX="27.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.UserPower" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.Verification" Width="1.5" PointX="12.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.VerificationType" Width="1.5" PointX="29.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DQDocModel.VeryficationCharacter" Width="1.5" PointX="7.75" PointY="29.75" IsExpanded="true" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_ApprovalFlowNodes_dbo_ApprovalFlows_FlowID" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_BookMarks_dbo_CustomTemplates_CustomTemplateId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_ChartMappings_dbo_CustomTemplates_CustomTemplateId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_ColdStorages_dbo_Purchasers_PurchaserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_Fans_dbo_ColdStorages_ColdStorageId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_ContractDetails_dbo_Contracts_ContractId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_ContractDetails_dbo_GoodsSales_GoodsSale_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_ContractDetails_dbo_Verifications_Verification_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_Invoices_dbo_Contracts_ContractId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_CUsers_dbo_Employees_EmployeeId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_CUsers_dbo_Positions_PositionId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_RoleWithUsers_dbo_CUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_Inventories_dbo_GoodsInfos_GoodsInfosId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_SaleOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_SupplyOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_Incubators_dbo_Purchasers_PurchaserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_Refrigerators_dbo_Purchasers_PurchaserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_SaleOrders_dbo_Purchasers_PurchasersId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_RoleWithUsers_dbo_Roles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId" ManuallyRouted="false" />
+        <AssociationConnector Association="DQDocModel.FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

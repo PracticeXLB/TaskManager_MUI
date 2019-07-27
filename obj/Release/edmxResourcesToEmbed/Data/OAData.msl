@@ -1,0 +1,1361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DQDocModelStoreContainer" CdmEntityContainer="DQDocEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="DQDocModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApprovalFlowNodes">
+      <EntityTypeMapping TypeName="DQDocModel.ApprovalFlowNode">
+        <MappingFragment StoreEntitySet="ApprovalFlowNodes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FlowID" ColumnName="FlowID" />
+          <ScalarProperty Name="FlowNodeName" ColumnName="FlowNodeName" />
+          <ScalarProperty Name="CIndex" ColumnName="CIndex" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApprovalFlowRecords">
+      <EntityTypeMapping TypeName="DQDocModel.ApprovalFlowRecord">
+        <MappingFragment StoreEntitySet="ApprovalFlowRecords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="WaitApprovalID" ColumnName="WaitApprovalID" />
+          <ScalarProperty Name="ApprovalTypeValue" ColumnName="ApprovalTypeValue" />
+          <ScalarProperty Name="FlowID" ColumnName="FlowID" />
+          <ScalarProperty Name="FlowNodeID" ColumnName="FlowNodeID" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="ApprovalRecordStatusValue" ColumnName="ApprovalRecordStatusValue" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApprovalFlows">
+      <EntityTypeMapping TypeName="DQDocModel.ApprovalFlow">
+        <MappingFragment StoreEntitySet="ApprovalFlows">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AppFloName" ColumnName="AppFloName" />
+          <ScalarProperty Name="ApprovalTypeValue" ColumnName="ApprovalTypeValue" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchivesContentFileMappings">
+      <EntityTypeMapping TypeName="DQDocModel.ArchivesContentFileMapping">
+        <MappingFragment StoreEntitySet="ArchivesContentFileMappings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContentTemplateName" ColumnName="ContentTemplateName" />
+          <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+          <ScalarProperty Name="ArchivesFileCatalogueId" ColumnName="ArchivesFileCatalogueId" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchivesFileCatalogues">
+      <EntityTypeMapping TypeName="DQDocModel.ArchivesFileCatalogue">
+        <MappingFragment StoreEntitySet="ArchivesFileCatalogues">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CatalogueName" ColumnName="CatalogueName" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchivesFiles">
+      <EntityTypeMapping TypeName="DQDocModel.ArchivesFile">
+        <MappingFragment StoreEntitySet="ArchivesFiles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileUrl" ColumnName="FileUrl" />
+          <ScalarProperty Name="ArchivesFileCatalogueId" ColumnName="ArchivesFileCatalogueId" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="FileClass" ColumnName="FileClass" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="ArchivesFileWarehouseId" ColumnName="ArchivesFileWarehouseId" />
+          <ScalarProperty Name="WarehouseName" ColumnName="WarehouseName" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchivesFileWarehouses">
+      <EntityTypeMapping TypeName="DQDocModel.ArchivesFileWarehous">
+        <MappingFragment StoreEntitySet="ArchivesFileWarehouses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WarehouseName" ColumnName="WarehouseName" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attachments">
+      <EntityTypeMapping TypeName="DQDocModel.Attachment">
+        <MappingFragment StoreEntitySet="Attachments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FileInfoId" ColumnName="FileInfoId" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="UploadUserId" ColumnName="UploadUserId" />
+          <ScalarProperty Name="DataYearId" ColumnName="DataYearId" />
+          <ScalarProperty Name="AttachmentTypeId" ColumnName="AttachmentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttachmentTypes">
+      <EntityTypeMapping TypeName="DQDocModel.AttachmentType">
+        <MappingFragment StoreEntitySet="AttachmentTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AttachmentTypeName" ColumnName="AttachmentTypeName" />
+          <ScalarProperty Name="CurrentUserId" ColumnName="CurrentUserId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookMarks">
+      <EntityTypeMapping TypeName="DQDocModel.BookMark">
+        <MappingFragment StoreEntitySet="BookMarks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomTemplateId" ColumnName="CustomTemplateId" />
+          <ScalarProperty Name="BookMarkName" ColumnName="BookMarkName" />
+          <ScalarProperty Name="BookMarkKey" ColumnName="BookMarkKey" />
+          <ScalarProperty Name="IsFromExcel" ColumnName="IsFromExcel" />
+          <ScalarProperty Name="IsPicturemark" ColumnName="IsPicturemark" />
+          <ScalarProperty Name="ComputeInfo" ColumnName="ComputeInfo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="BookMarkTagId" ColumnName="BookMarkTagId" />
+          <ScalarProperty Name="BookMarkType" ColumnName="BookMarkType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalibrationRecords">
+      <EntityTypeMapping TypeName="DQDocModel.CalibrationRecord">
+        <MappingFragment StoreEntitySet="CalibrationRecords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="CalibrationId" ColumnName="CalibrationId" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+          <ScalarProperty Name="Humidity" ColumnName="Humidity" />
+          <ScalarProperty Name="GeographicalLocaltion" ColumnName="GeographicalLocaltion" />
+          <ScalarProperty Name="SpatialLocaltion" ColumnName="SpatialLocaltion" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalibrationRecordTemps">
+      <EntityTypeMapping TypeName="DQDocModel.CalibrationRecordTemp">
+        <MappingFragment StoreEntitySet="CalibrationRecordTemps">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="CalibrationId" ColumnName="CalibrationId" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+          <ScalarProperty Name="Humidity" ColumnName="Humidity" />
+          <ScalarProperty Name="GeographicalLocaltion" ColumnName="GeographicalLocaltion" />
+          <ScalarProperty Name="SpatialLocaltion" ColumnName="SpatialLocaltion" />
+          <ScalarProperty Name="RecordDate" ColumnName="RecordDate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calibrations">
+      <EntityTypeMapping TypeName="DQDocModel.Calibration">
+        <MappingFragment StoreEntitySet="Calibrations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="CheckUnit" ColumnName="CheckUnit" />
+          <ScalarProperty Name="CertificateNumber" ColumnName="CertificateNumber" />
+          <ScalarProperty Name="PeriodOfValidity" ColumnName="PeriodOfValidity" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="ScanningFileId" ColumnName="ScanningFileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChartMappings">
+      <EntityTypeMapping TypeName="DQDocModel.ChartMapping">
+        <MappingFragment StoreEntitySet="ChartMappings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomTemplateId" ColumnName="CustomTemplateId" />
+          <ScalarProperty Name="ChartString" ColumnName="ChartString" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ColdStorages">
+      <EntityTypeMapping TypeName="DQDocModel.ColdStorage">
+        <MappingFragment StoreEntitySet="ColdStorages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="PurchaserId" ColumnName="PurchaserId" />
+          <ScalarProperty Name="VerificationCharger" ColumnName="VerificationCharger" />
+          <ScalarProperty Name="VerificationExeChanger" ColumnName="VerificationExeChanger" />
+          <ScalarProperty Name="Keeper" ColumnName="Keeper" />
+          <ScalarProperty Name="DiviceKeeper" ColumnName="DiviceKeeper" />
+          <ScalarProperty Name="QualityKeeper" ColumnName="QualityKeeper" />
+          <ScalarProperty Name="MaintainKeeper" ColumnName="MaintainKeeper" />
+          <ScalarProperty Name="StorageSetTypeValue" ColumnName="StorageSetTypeValue" />
+          <ScalarProperty Name="OutEnviroment" ColumnName="OutEnviroment" />
+          <ScalarProperty Name="SetPostion" ColumnName="SetPostion" />
+          <ScalarProperty Name="StartedDatetime" ColumnName="StartedDatetime" />
+          <ScalarProperty Name="StorageLength" ColumnName="StorageLength" />
+          <ScalarProperty Name="StorageWidth" ColumnName="StorageWidth" />
+          <ScalarProperty Name="StorageHeight" ColumnName="StorageHeight" />
+          <ScalarProperty Name="StorageVolumn" ColumnName="StorageVolumn" />
+          <ScalarProperty Name="DoorLength" ColumnName="DoorLength" />
+          <ScalarProperty Name="DoorWidth" ColumnName="DoorWidth" />
+          <ScalarProperty Name="DoorHeight" ColumnName="DoorHeight" />
+          <ScalarProperty Name="ThermalInsuMaterial" ColumnName="ThermalInsuMaterial" />
+          <ScalarProperty Name="ThermalSystemFactory" ColumnName="ThermalSystemFactory" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ColdStoreVerifications">
+      <EntityTypeMapping TypeName="DQDocModel.ColdStoreVerification">
+        <MappingFragment StoreEntitySet="ColdStoreVerifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="VerificationId" ColumnName="VerificationId" />
+          <ScalarProperty Name="ColdStorageId" ColumnName="ColdStorageId" />
+          <ScalarProperty Name="VTStartTime" ColumnName="VTStartTime" />
+          <ScalarProperty Name="VTStopTime" ColumnName="VTStopTime" />
+          <ScalarProperty Name="DataAnaStartTime" ColumnName="DataAnaStartTime" />
+          <ScalarProperty Name="DataAnaStopTime" ColumnName="DataAnaStopTime" />
+          <ScalarProperty Name="InternalAuditStartTime" ColumnName="InternalAuditStartTime" />
+          <ScalarProperty Name="InternalAuditStopTime" ColumnName="InternalAuditStopTime" />
+          <ScalarProperty Name="stationPointAvg" ColumnName="stationPointAvg" />
+          <ScalarProperty Name="stationPointSpe" ColumnName="stationPointSpe" />
+          <ScalarProperty Name="EnvTempTestStartTime" ColumnName="EnvTempTestStartTime" />
+          <ScalarProperty Name="EnvTempTestStopTime" ColumnName="EnvTempTestStopTime" />
+          <ScalarProperty Name="EnvMaxTemp" ColumnName="EnvMaxTemp" />
+          <ScalarProperty Name="EnvMinTemp" ColumnName="EnvMinTemp" />
+          <ScalarProperty Name="EnvAvgTemp" ColumnName="EnvAvgTemp" />
+          <ScalarProperty Name="FullLoadStartTime" ColumnName="FullLoadStartTime" />
+          <ScalarProperty Name="FullLoadStopTime" ColumnName="FullLoadStopTime" />
+          <ScalarProperty Name="OpenDoorTestStartTime" ColumnName="OpenDoorTestStartTime" />
+          <ScalarProperty Name="OpenDoorTestStopTime" ColumnName="OpenDoorTestStopTime" />
+          <ScalarProperty Name="OpenDoorTestTemp" ColumnName="OpenDoorTestTemp" />
+          <ScalarProperty Name="OpenDoorTime" ColumnName="OpenDoorTime" />
+          <ScalarProperty Name="CardNo1" ColumnName="CardNo1" />
+          <ScalarProperty Name="CardNo2" ColumnName="CardNo2" />
+          <ScalarProperty Name="TerminalNo1" ColumnName="TerminalNo1" />
+          <ScalarProperty Name="TerminalNo2" ColumnName="TerminalNo2" />
+          <ScalarProperty Name="AvgDifferCTNo1" ColumnName="AvgDifferCTNo1" />
+          <ScalarProperty Name="AvgDifferCTNo2" ColumnName="AvgDifferCTNo2" />
+          <ScalarProperty Name="AvgDifferCTMax" ColumnName="AvgDifferCTMax" />
+          <ScalarProperty Name="PowerCutStartTime" ColumnName="PowerCutStartTime" />
+          <ScalarProperty Name="PowerCutStopTime" ColumnName="PowerCutStopTime" />
+          <ScalarProperty Name="PowerCutTemp" ColumnName="PowerCutTemp" />
+          <ScalarProperty Name="PowerCutThermoTime" ColumnName="PowerCutThermoTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ColdStoreVerifySolutions">
+      <EntityTypeMapping TypeName="DQDocModel.ColdStoreVerifySolution">
+        <MappingFragment StoreEntitySet="ColdStoreVerifySolutions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="VerificationId" ColumnName="VerificationId" />
+          <ScalarProperty Name="ColdStorageId" ColumnName="ColdStorageId" />
+          <ScalarProperty Name="VTStartTime" ColumnName="VTStartTime" />
+          <ScalarProperty Name="VTStopTime" ColumnName="VTStopTime" />
+          <ScalarProperty Name="DataAnaStartTime" ColumnName="DataAnaStartTime" />
+          <ScalarProperty Name="DataAnaStopTime" ColumnName="DataAnaStopTime" />
+          <ScalarProperty Name="InternalAuditStartTime" ColumnName="InternalAuditStartTime" />
+          <ScalarProperty Name="InternalAuditStopTime" ColumnName="InternalAuditStopTime" />
+          <ScalarProperty Name="stationPointAvg" ColumnName="stationPointAvg" />
+          <ScalarProperty Name="stationPointSpe" ColumnName="stationPointSpe" />
+          <ScalarProperty Name="EnvTempTestStartTime" ColumnName="EnvTempTestStartTime" />
+          <ScalarProperty Name="EnvTempTestStopTime" ColumnName="EnvTempTestStopTime" />
+          <ScalarProperty Name="EnvMaxTemp" ColumnName="EnvMaxTemp" />
+          <ScalarProperty Name="EnvMinTemp" ColumnName="EnvMinTemp" />
+          <ScalarProperty Name="EnvAvgTemp" ColumnName="EnvAvgTemp" />
+          <ScalarProperty Name="FullLoadStartTime" ColumnName="FullLoadStartTime" />
+          <ScalarProperty Name="FullLoadStopTime" ColumnName="FullLoadStopTime" />
+          <ScalarProperty Name="OpenDoorTestStartTime" ColumnName="OpenDoorTestStartTime" />
+          <ScalarProperty Name="OpenDoorTestStopTime" ColumnName="OpenDoorTestStopTime" />
+          <ScalarProperty Name="OpenDoorTestTemp" ColumnName="OpenDoorTestTemp" />
+          <ScalarProperty Name="OpenDoorTime" ColumnName="OpenDoorTime" />
+          <ScalarProperty Name="CardNo1" ColumnName="CardNo1" />
+          <ScalarProperty Name="CardNo2" ColumnName="CardNo2" />
+          <ScalarProperty Name="TerminalNo1" ColumnName="TerminalNo1" />
+          <ScalarProperty Name="TerminalNo2" ColumnName="TerminalNo2" />
+          <ScalarProperty Name="AvgDifferCTNo1" ColumnName="AvgDifferCTNo1" />
+          <ScalarProperty Name="AvgDifferCTNo2" ColumnName="AvgDifferCTNo2" />
+          <ScalarProperty Name="AvgDifferCTMax" ColumnName="AvgDifferCTMax" />
+          <ScalarProperty Name="PowerCutStartTime" ColumnName="PowerCutStartTime" />
+          <ScalarProperty Name="PowerCutStopTime" ColumnName="PowerCutStopTime" />
+          <ScalarProperty Name="PowerCutTemp" ColumnName="PowerCutTemp" />
+          <ScalarProperty Name="PowerCutThermoTime" ColumnName="PowerCutThermoTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommonDevices">
+      <EntityTypeMapping TypeName="DQDocModel.CommonDevice">
+        <MappingFragment StoreEntitySet="CommonDevices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="PurchaserId" ColumnName="PurchaserId" />
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="DQDocModel.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LegalRepresentative" ColumnName="LegalRepresentative" />
+          <ScalarProperty Name="BussinessScope" ColumnName="BussinessScope" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractDetails">
+      <EntityTypeMapping TypeName="DQDocModel.ContractDetail">
+        <MappingFragment StoreEntitySet="ContractDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="ContractTypeValue" ColumnName="ContractTypeValue" />
+          <ScalarProperty Name="ContractDetailExecuteStatusValue" ColumnName="ContractDetailExecuteStatusValue" />
+          <ScalarProperty Name="ContractDetailExecutorId" ColumnName="ContractDetailExecutorId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="GoodsSale_Id" ColumnName="GoodsSale_Id" />
+          <ScalarProperty Name="Verification_Id" ColumnName="Verification_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contracts">
+      <EntityTypeMapping TypeName="DQDocModel.Contract">
+        <MappingFragment StoreEntitySet="Contracts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ContractContent" ColumnName="ContractContent" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="SignatureDate" ColumnName="SignatureDate" />
+          <ScalarProperty Name="ContractExecutionDate" ColumnName="ContractExecutionDate" />
+          <ScalarProperty Name="FileInfoId" ColumnName="FileInfoId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="ContractEndDate" ColumnName="ContractEndDate" />
+          <ScalarProperty Name="WarningDate" ColumnName="WarningDate" />
+          <ScalarProperty Name="CustomerSourceValue" ColumnName="CustomerSourceValue" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="TotalMoney" ColumnName="TotalMoney" />
+          <ScalarProperty Name="PrePayMoney" ColumnName="PrePayMoney" />
+          <ScalarProperty Name="IsOwn" ColumnName="IsOwn" />
+          <ScalarProperty Name="ApprovalFlowId" ColumnName="ApprovalFlowId" />
+          <ScalarProperty Name="ApprovalString" ColumnName="ApprovalString" />
+          <ScalarProperty Name="ApprovalStatusValue" ColumnName="ApprovalStatusValue" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUsers">
+      <EntityTypeMapping TypeName="DQDocModel.CUser">
+        <MappingFragment StoreEntitySet="CUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="PurchaserId" ColumnName="PurchaserId" />
+          <ScalarProperty Name="IsCompanyAdmin" ColumnName="IsCompanyAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomBookMarks">
+      <EntityTypeMapping TypeName="DQDocModel.CustomBookMark">
+        <MappingFragment StoreEntitySet="CustomBookMarks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BookMarkName" ColumnName="BookMarkName" />
+          <ScalarProperty Name="BookMarkKey" ColumnName="BookMarkKey" />
+          <ScalarProperty Name="IsFromExcel" ColumnName="IsFromExcel" />
+          <ScalarProperty Name="IsPicturemark" ColumnName="IsPicturemark" />
+          <ScalarProperty Name="ComputeInfo" ColumnName="ComputeInfo" />
+          <ScalarProperty Name="BookMarkType" ColumnName="BookMarkType" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomFields">
+      <EntityTypeMapping TypeName="DQDocModel.CustomField">
+        <MappingFragment StoreEntitySet="CustomFields">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomTemplates">
+      <EntityTypeMapping TypeName="DQDocModel.CustomTemplate">
+        <MappingFragment StoreEntitySet="CustomTemplates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="TemplateFilePath" ColumnName="TemplateFilePath" />
+          <ScalarProperty Name="TemplateFileId" ColumnName="TemplateFileId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataYears">
+      <EntityTypeMapping TypeName="DQDocModel.DataYear">
+        <MappingFragment StoreEntitySet="DataYears">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataYearName" ColumnName="DataYearName" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CurrentUserId" ColumnName="CurrentUserId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="DQDocModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="ChargerId" ColumnName="ChargerId" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="DQDocModel.Document">
+        <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="DocumentContent" ColumnName="DocumentContent" />
+          <ScalarProperty Name="FileInfoId" ColumnName="FileInfoId" />
+          <ScalarProperty Name="ApprovalStatusValue" ColumnName="ApprovalStatusValue" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="DQDocModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="GenderValue" ColumnName="GenderValue" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="EduBg" ColumnName="EduBg" />
+          <ScalarProperty Name="GraduateFrom" ColumnName="GraduateFrom" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="JobExperienceYears" ColumnName="JobExperienceYears" />
+          <ScalarProperty Name="OfferDate" ColumnName="OfferDate" />
+          <ScalarProperty Name="IsMarried" ColumnName="IsMarried" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="OnDutyValue" ColumnName="OnDutyValue" />
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="IsCustomer" ColumnName="IsCustomer" />
+          <ScalarProperty Name="PurchaserId" ColumnName="PurchaserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fans">
+      <EntityTypeMapping TypeName="DQDocModel.Fan">
+        <MappingFragment StoreEntitySet="Fans">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ColdStorageId" ColumnName="ColdStorageId" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="ModelType" ColumnName="ModelType" />
+          <ScalarProperty Name="DistanceToWals" ColumnName="DistanceToWals" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="FanClass" ColumnName="FanClass" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FieldMappings">
+      <EntityTypeMapping TypeName="DQDocModel.FieldMapping">
+        <MappingFragment StoreEntitySet="FieldMappings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="BusinessType" ColumnName="BusinessType" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="FieldOrder" ColumnName="FieldOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FieldValueMappings">
+      <EntityTypeMapping TypeName="DQDocModel.FieldValueMapping">
+        <MappingFragment StoreEntitySet="FieldValueMappings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FieldMappingId" ColumnName="FieldMappingId" />
+          <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+          <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+          <ScalarProperty Name="FieldValue" ColumnName="FieldValue" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileInfoes">
+      <EntityTypeMapping TypeName="DQDocModel.FileInfo">
+        <MappingFragment StoreEntitySet="FileInfoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FileTypeValue" ColumnName="FileTypeValue" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="FileStream" ColumnName="FileStream" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsInfos">
+      <EntityTypeMapping TypeName="DQDocModel.GoodsInfo">
+        <MappingFragment StoreEntitySet="GoodsInfos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Specific" ColumnName="Specific" />
+          <ScalarProperty Name="ModelType" ColumnName="ModelType" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="GoodsTypeId" ColumnName="GoodsTypeId" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Factory" ColumnName="Factory" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactor" ColumnName="Contactor" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsSales">
+      <EntityTypeMapping TypeName="DQDocModel.GoodsSale">
+        <MappingFragment StoreEntitySet="GoodsSales">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContractDetailId" ColumnName="ContractDetailId" />
+          <ScalarProperty Name="GoodsInfoId" ColumnName="GoodsInfoId" />
+          <ScalarProperty Name="SaleCount" ColumnName="SaleCount" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsTypes">
+      <EntityTypeMapping TypeName="DQDocModel.GoodsType">
+        <MappingFragment StoreEntitySet="GoodsTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incubators">
+      <EntityTypeMapping TypeName="DQDocModel.Incubator">
+        <MappingFragment StoreEntitySet="Incubators">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PurchaserId" ColumnName="PurchaserId" />
+          <ScalarProperty Name="VerificationCharger" ColumnName="VerificationCharger" />
+          <ScalarProperty Name="VerificationExeChanger" ColumnName="VerificationExeChanger" />
+          <ScalarProperty Name="Keeper" ColumnName="Keeper" />
+          <ScalarProperty Name="QualityKeeper" ColumnName="QualityKeeper" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="SN" ColumnName="SN" />
+          <ScalarProperty Name="BrandModel" ColumnName="BrandModel" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Accendant" ColumnName="Accendant" />
+          <ScalarProperty Name="ExternalSize" ColumnName="ExternalSize" />
+          <ScalarProperty Name="InternalSize" ColumnName="InternalSize" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="WallThickness" ColumnName="WallThickness" />
+          <ScalarProperty Name="ExternalMaterial" ColumnName="ExternalMaterial" />
+          <ScalarProperty Name="InternalMaterial" ColumnName="InternalMaterial" />
+          <ScalarProperty Name="IceBrand" ColumnName="IceBrand" />
+          <ScalarProperty Name="IceCount" ColumnName="IceCount" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncubatorVerifications">
+      <EntityTypeMapping TypeName="DQDocModel.IncubatorVerification">
+        <MappingFragment StoreEntitySet="IncubatorVerifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="VerificationId" ColumnName="VerificationId" />
+          <ScalarProperty Name="VTStartTime" ColumnName="VTStartTime" />
+          <ScalarProperty Name="VTStopTime" ColumnName="VTStopTime" />
+          <ScalarProperty Name="EnvMaxTemp" ColumnName="EnvMaxTemp" />
+          <ScalarProperty Name="EnvMinTemp" ColumnName="EnvMinTemp" />
+          <ScalarProperty Name="EnvAvgTemp" ColumnName="EnvAvgTemp" />
+          <ScalarProperty Name="IncubatorId" ColumnName="IncubatorId" />
+          <ScalarProperty Name="VTProperty" ColumnName="VTProperty" />
+          <ScalarProperty Name="UnpackTestStartTime" ColumnName="UnpackTestStartTime" />
+          <ScalarProperty Name="UnpackTestStopTime" ColumnName="UnpackTestStopTime" />
+          <ScalarProperty Name="TestStartTime" ColumnName="TestStartTime" />
+          <ScalarProperty Name="TestStopTime" ColumnName="TestStopTime" />
+          <ScalarProperty Name="OuterEnvironment" ColumnName="OuterEnvironment" />
+          <ScalarProperty Name="TestCard" ColumnName="TestCard" />
+          <ScalarProperty Name="AverageDeviation" ColumnName="AverageDeviation" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="VTAddress" ColumnName="VTAddress" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncubatorVerifySolutions">
+      <EntityTypeMapping TypeName="DQDocModel.IncubatorVerifySolution">
+        <MappingFragment StoreEntitySet="IncubatorVerifySolutions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="VerificationId" ColumnName="VerificationId" />
+          <ScalarProperty Name="IncubatorId" ColumnName="IncubatorId" />
+          <ScalarProperty Name="VTStartTime" ColumnName="VTStartTime" />
+          <ScalarProperty Name="VTStopTime" ColumnName="VTStopTime" />
+          <ScalarProperty Name="DataAnaStartTime" ColumnName="DataAnaStartTime" />
+          <ScalarProperty Name="DataAnaStopTime" ColumnName="DataAnaStopTime" />
+          <ScalarProperty Name="InternalAuditStartTime" ColumnName="InternalAuditStartTime" />
+          <ScalarProperty Name="InternalAuditStopTime" ColumnName="InternalAuditStopTime" />
+          <ScalarProperty Name="stationPointAvg" ColumnName="stationPointAvg" />
+          <ScalarProperty Name="stationPointSpe" ColumnName="stationPointSpe" />
+          <ScalarProperty Name="EnvTempTestStartTime" ColumnName="EnvTempTestStartTime" />
+          <ScalarProperty Name="EnvTempTestStopTime" ColumnName="EnvTempTestStopTime" />
+          <ScalarProperty Name="EnvMaxTemp" ColumnName="EnvMaxTemp" />
+          <ScalarProperty Name="EnvMinTemp" ColumnName="EnvMinTemp" />
+          <ScalarProperty Name="EnvAvgTemp" ColumnName="EnvAvgTemp" />
+          <ScalarProperty Name="FullLoadStartTime" ColumnName="FullLoadStartTime" />
+          <ScalarProperty Name="FullLoadStopTime" ColumnName="FullLoadStopTime" />
+          <ScalarProperty Name="OpenDoorTestStartTime" ColumnName="OpenDoorTestStartTime" />
+          <ScalarProperty Name="OpenDoorTestStopTime" ColumnName="OpenDoorTestStopTime" />
+          <ScalarProperty Name="OpenDoorTestTemp" ColumnName="OpenDoorTestTemp" />
+          <ScalarProperty Name="OpenDoorTime" ColumnName="OpenDoorTime" />
+          <ScalarProperty Name="CardNo1" ColumnName="CardNo1" />
+          <ScalarProperty Name="CardNo2" ColumnName="CardNo2" />
+          <ScalarProperty Name="TerminalNo1" ColumnName="TerminalNo1" />
+          <ScalarProperty Name="TerminalNo2" ColumnName="TerminalNo2" />
+          <ScalarProperty Name="AvgDifferCTNo1" ColumnName="AvgDifferCTNo1" />
+          <ScalarProperty Name="AvgDifferCTNo2" ColumnName="AvgDifferCTNo2" />
+          <ScalarProperty Name="AvgDifferCTMax" ColumnName="AvgDifferCTMax" />
+          <ScalarProperty Name="PowerCutStartTime" ColumnName="PowerCutStartTime" />
+          <ScalarProperty Name="PowerCutStopTime" ColumnName="PowerCutStopTime" />
+          <ScalarProperty Name="PowerCutTemp" ColumnName="PowerCutTemp" />
+          <ScalarProperty Name="PowerCutThermoTime" ColumnName="PowerCutThermoTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="DQDocModel.Inventory">
+        <MappingFragment StoreEntitySet="Inventories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InInventoryDate" ColumnName="InInventoryDate" />
+          <ScalarProperty Name="ProductDate" ColumnName="ProductDate" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="GoodsInfosId" ColumnName="GoodsInfosId" />
+          <ScalarProperty Name="SupplyUnitPrice" ColumnName="SupplyUnitPrice" />
+          <ScalarProperty Name="InventoryCount" ColumnName="InventoryCount" />
+          <ScalarProperty Name="SupplyOrderDetailsId" ColumnName="SupplyOrderDetailsId" />
+          <ScalarProperty Name="SupplyOrderId" ColumnName="SupplyOrderId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="DQDocModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="PayDate" ColumnName="PayDate" />
+          <ScalarProperty Name="PayedMoney" ColumnName="PayedMoney" />
+          <ScalarProperty Name="IsInvoiced" ColumnName="IsInvoiced" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogInfoes">
+      <EntityTypeMapping TypeName="DQDocModel.LogInfo">
+        <MappingFragment StoreEntitySet="LogInfoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LogContent" ColumnName="LogContent" />
+          <ScalarProperty Name="LogName" ColumnName="LogName" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="DQDocModel.Menu">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Pid" ColumnName="Pid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Args" ColumnName="Args" />
+          <ScalarProperty Name="PIndex" ColumnName="PIndex" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OATasks">
+      <EntityTypeMapping TypeName="DQDocModel.OATask">
+        <MappingFragment StoreEntitySet="OATask">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PurchaseId" ColumnName="PurchaseId" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Excutor" ColumnName="Excutor" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="DQDocModel.Position">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchasers">
+      <EntityTypeMapping TypeName="DQDocModel.Purchaser">
+        <MappingFragment StoreEntitySet="Purchasers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Charger" ColumnName="Charger" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactor" ColumnName="Contactor" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="RemoteUserId" ColumnName="RemoteUserId" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="FileInfoId" ColumnName="FileInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refrigerators">
+      <EntityTypeMapping TypeName="DQDocModel.Refrigerator">
+        <MappingFragment StoreEntitySet="Refrigerators">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PurchaserId" ColumnName="PurchaserId" />
+          <ScalarProperty Name="VerificationCharger" ColumnName="VerificationCharger" />
+          <ScalarProperty Name="VerificationExeChanger" ColumnName="VerificationExeChanger" />
+          <ScalarProperty Name="Keeper" ColumnName="Keeper" />
+          <ScalarProperty Name="QualityKeeper" ColumnName="QualityKeeper" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="BrandModel" ColumnName="BrandModel" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="RefrigeratingSystemFactory" ColumnName="RefrigeratingSystemFactory" />
+          <ScalarProperty Name="CarriageDimension" ColumnName="CarriageDimension" />
+          <ScalarProperty Name="Driver" ColumnName="Driver" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="SpecificationVolume" ColumnName="SpecificationVolume" />
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RefrigeratorVerifications">
+      <EntityTypeMapping TypeName="DQDocModel.RefrigeratorVerification">
+        <MappingFragment StoreEntitySet="RefrigeratorVerifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="VerificationId" ColumnName="VerificationId" />
+          <ScalarProperty Name="RefrigeratorId" ColumnName="RefrigeratorId" />
+          <ScalarProperty Name="VTStartTime" ColumnName="VTStartTime" />
+          <ScalarProperty Name="VTStopTime" ColumnName="VTStopTime" />
+          <ScalarProperty Name="stationPointAvg" ColumnName="stationPointAvg" />
+          <ScalarProperty Name="stationPointSpe" ColumnName="stationPointSpe" />
+          <ScalarProperty Name="EnvTempTestStartTime" ColumnName="EnvTempTestStartTime" />
+          <ScalarProperty Name="EnvTempTestStopTime" ColumnName="EnvTempTestStopTime" />
+          <ScalarProperty Name="EnvMaxTemp" ColumnName="EnvMaxTemp" />
+          <ScalarProperty Name="EnvMinTemp" ColumnName="EnvMinTemp" />
+          <ScalarProperty Name="EnvAvgTemp" ColumnName="EnvAvgTemp" />
+          <ScalarProperty Name="FullLoadStartTime" ColumnName="FullLoadStartTime" />
+          <ScalarProperty Name="FullLoadStopTime" ColumnName="FullLoadStopTime" />
+          <ScalarProperty Name="OpenDoorTestStartTime" ColumnName="OpenDoorTestStartTime" />
+          <ScalarProperty Name="OpenDoorTestStopTime" ColumnName="OpenDoorTestStopTime" />
+          <ScalarProperty Name="OpenDoorTestTemp" ColumnName="OpenDoorTestTemp" />
+          <ScalarProperty Name="CardNo1" ColumnName="CardNo1" />
+          <ScalarProperty Name="CardNo2" ColumnName="CardNo2" />
+          <ScalarProperty Name="AvgDifferCTNo1" ColumnName="AvgDifferCTNo1" />
+          <ScalarProperty Name="AvgDifferCTNo2" ColumnName="AvgDifferCTNo2" />
+          <ScalarProperty Name="AvgDifferCTMax" ColumnName="AvgDifferCTMax" />
+          <ScalarProperty Name="PowerCutStartTime" ColumnName="PowerCutStartTime" />
+          <ScalarProperty Name="PowerCutStopTime" ColumnName="PowerCutStopTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="VTTarget" ColumnName="VTTarget" />
+          <ScalarProperty Name="EnvironmentPointSpe" ColumnName="EnvironmentPointSpe" />
+          <ScalarProperty Name="PowerCutEnvironmentTemp" ColumnName="PowerCutEnvironmentTemp" />
+          <ScalarProperty Name="PowerCutInnerTemp" ColumnName="PowerCutInnerTemp" />
+          <ScalarProperty Name="LowerLimit" ColumnName="LowerLimit" />
+          <ScalarProperty Name="DifferenceValue" ColumnName="DifferenceValue" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="TriggerAlarmTime" ColumnName="TriggerAlarmTime" />
+          <ScalarProperty Name="InitTemp" ColumnName="InitTemp" />
+          <ScalarProperty Name="CoolingStartTime" ColumnName="CoolingStartTime" />
+          <ScalarProperty Name="CoolingStopTime" ColumnName="CoolingStopTime" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RefrigeratorVerifySolutions">
+      <EntityTypeMapping TypeName="DQDocModel.RefrigeratorVerifySolution">
+        <MappingFragment StoreEntitySet="RefrigeratorVerifySolutions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="VerificationId" ColumnName="VerificationId" />
+          <ScalarProperty Name="RefrigeratorId" ColumnName="RefrigeratorId" />
+          <ScalarProperty Name="stationPointAvg" ColumnName="stationPointAvg" />
+          <ScalarProperty Name="stationPointSpe" ColumnName="stationPointSpe" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="PlanVerifyDate" ColumnName="PlanVerifyDate" />
+          <ScalarProperty Name="VerifyDate" ColumnName="VerifyDate" />
+          <ScalarProperty Name="VerifyCharacter" ColumnName="VerifyCharacter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="DQDocModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleWithMenus">
+      <EntityTypeMapping TypeName="DQDocModel.RoleWithMenu">
+        <MappingFragment StoreEntitySet="RoleWithMenus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="BusinessAuthValue" ColumnName="BusinessAuthValue" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleWithUsers">
+      <EntityTypeMapping TypeName="DQDocModel.RoleWithUser">
+        <MappingFragment StoreEntitySet="RoleWithUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleOrderDetails">
+      <EntityTypeMapping TypeName="DQDocModel.SaleOrderDetail">
+        <MappingFragment StoreEntitySet="SaleOrderDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GoodsInfos" ColumnName="GoodsInfos" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="SupplyPrice" ColumnName="SupplyPrice" />
+          <ScalarProperty Name="GoodsCount" ColumnName="GoodsCount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="SaleOrdersId" ColumnName="SaleOrdersId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="GoodsInfo_Id" ColumnName="GoodsInfo_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleOrders">
+      <EntityTypeMapping TypeName="DQDocModel.SaleOrder">
+        <MappingFragment StoreEntitySet="SaleOrders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SaleOrderCode" ColumnName="SaleOrderCode" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="GoodsCount" ColumnName="GoodsCount" />
+          <ScalarProperty Name="PurchasersId" ColumnName="PurchasersId" />
+          <ScalarProperty Name="SaleOrderStatusValue" ColumnName="SaleOrderStatusValue" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShortMessages">
+      <EntityTypeMapping TypeName="DQDocModel.ShortMessage">
+        <MappingFragment StoreEntitySet="ShortMessages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReceiveUserId" ColumnName="ReceiveUserId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusFields">
+      <EntityTypeMapping TypeName="DQDocModel.StatusField">
+        <MappingFragment StoreEntitySet="StatusFields">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplyers">
+      <EntityTypeMapping TypeName="DQDocModel.Supplyer">
+        <MappingFragment StoreEntitySet="Supplyers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Charger" ColumnName="Charger" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactor" ColumnName="Contactor" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplyOrderDetails">
+      <EntityTypeMapping TypeName="DQDocModel.SupplyOrderDetail">
+        <MappingFragment StoreEntitySet="SupplyOrderDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GoodsInfos" ColumnName="GoodsInfos" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="GoodsCount" ColumnName="GoodsCount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="SupplyOrdersId" ColumnName="SupplyOrdersId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="GoodsInfo_Id" ColumnName="GoodsInfo_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplyOrders">
+      <EntityTypeMapping TypeName="DQDocModel.SupplyOrder">
+        <MappingFragment StoreEntitySet="SupplyOrders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="GoodsCount" ColumnName="GoodsCount" />
+          <ScalarProperty Name="SupplyersId" ColumnName="SupplyersId" />
+          <ScalarProperty Name="SupplyStatusValue" ColumnName="SupplyStatusValue" />
+          <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Items">
+      <EntityTypeMapping TypeName="DQDocModel.Sys_Items">
+        <MappingFragment StoreEntitySet="Sys_Items">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_ItemsDetail">
+      <EntityTypeMapping TypeName="DQDocModel.Sys_ItemsDetail">
+        <MappingFragment StoreEntitySet="Sys_ItemsDetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemValue" ColumnName="ItemValue" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPowers">
+      <EntityTypeMapping TypeName="DQDocModel.UserPower">
+        <MappingFragment StoreEntitySet="UserPowers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ItemsDetailID" ColumnName="ItemsDetailID" />
+          <ScalarProperty Name="ItemsDetailName" ColumnName="ItemsDetailName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Verifications">
+      <EntityTypeMapping TypeName="DQDocModel.Verification">
+        <MappingFragment StoreEntitySet="Verifications">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContractDetailId" ColumnName="ContractDetailId" />
+          <ScalarProperty Name="SchemeFileId" ColumnName="SchemeFileId" />
+          <ScalarProperty Name="SchemeUserId" ColumnName="SchemeUserId" />
+          <ScalarProperty Name="SchemeMemo" ColumnName="SchemeMemo" />
+          <ScalarProperty Name="SchemeDatetime" ColumnName="SchemeDatetime" />
+          <ScalarProperty Name="ExecuteTime" ColumnName="ExecuteTime" />
+          <ScalarProperty Name="ExecuteDataFileId" ColumnName="ExecuteDataFileId" />
+          <ScalarProperty Name="ExecuteMemo" ColumnName="ExecuteMemo" />
+          <ScalarProperty Name="ReporterId" ColumnName="ReporterId" />
+          <ScalarProperty Name="VerificationFileInfoId" ColumnName="VerificationFileInfoId" />
+          <ScalarProperty Name="ReportMemo" ColumnName="ReportMemo" />
+          <ScalarProperty Name="ReportDatetime" ColumnName="ReportDatetime" />
+          <ScalarProperty Name="VerificationTypeId" ColumnName="VerificationTypeId" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="VerifiactionTimes" ColumnName="VerifiactionTimes" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="VerifiactionStatusValue" ColumnName="VerifiactionStatusValue" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+          <ScalarProperty Name="OriginalVerifyDataFileId" ColumnName="OriginalVerifyDataFileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VerificationTypes">
+      <EntityTypeMapping TypeName="DQDocModel.VerificationType">
+        <MappingFragment StoreEntitySet="VerificationTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Memo" ColumnName="Memo" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VeryficationCharacters">
+      <EntityTypeMapping TypeName="DQDocModel.VeryficationCharacter">
+        <MappingFragment StoreEntitySet="VeryficationCharacters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AttachmentTypeName" ColumnName="AttachmentTypeName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
+          <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

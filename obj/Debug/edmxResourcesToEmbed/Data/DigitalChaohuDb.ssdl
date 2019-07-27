@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DigitalChaohuDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="BlueAlgae">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="D_level" Type="varchar" MaxLength="50" />
+    <Property Name="PicUrl" Type="varchar" MaxLength="310" />
+    <Property Name="description" Type="varchar" MaxLength="510" />
+    <Property Name="to_timestamp" Type="varchar" MaxLength="50" />
+    <Property Name="year" Type="int" />
+    <Property Name="month" Type="int" />
+  </EntityType>
+  <EntityType Name="FractureSurfaceInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FractureSurfaceName" Type="nvarchar" MaxLength="150" />
+    <Property Name="FractureSurfaceCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="150" />
+    <Property Name="AppType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RainFall">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="month_rainfall" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="year_rainfall" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="day_rainfall" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="rainfall" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="record_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SiteInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteName" Type="nvarchar" MaxLength="150" />
+    <Property Name="SiteCode" Type="nvarchar" MaxLength="150" />
+    <Property Name="AlertWaterLevel" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="EnsureWaterLevel" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AppType" Type="nvarchar" MaxLength="150" />
+    <Property Name="BelongToRiver" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Waterlevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="warninglevel" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="guaranteedlevel" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="waterlevel" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="record_time" Type="datetime" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WaterLevelHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" />
+    <Property Name="WaterLevel" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlowRate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Record_time" Type="datetime" />
+    <Property Name="station_code" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WaterLevelRealtime">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteId" Type="int" />
+    <Property Name="WaterLevel" Type="nvarchar" MaxLength="50" />
+    <Property Name="FlowRate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Record_time" Type="datetime" />
+    <Property Name="station_code" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WaterQuality">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tn" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="tp" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="nh4" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="cod" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="record_time" Type="datetime" />
+    <Property Name="station_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="SiteId" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="qType" Type="nvarchar" MaxLength="50" />
+    <Property Name="viewtype" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WeatherData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="500" />
+    <Property Name="record_time" Type="datetime" />
+    <Property Name="ws" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="wo" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="t" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="r" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="DigitalChaohuDbModelStoreContainer">
+    <EntitySet Name="BlueAlgae" EntityType="Self.BlueAlgae" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FractureSurfaceInfo" EntityType="Self.FractureSurfaceInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RainFall" EntityType="Self.RainFall" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiteInfo" EntityType="Self.SiteInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Waterlevel" EntityType="Self.Waterlevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WaterLevelHistory" EntityType="Self.WaterLevelHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WaterLevelRealtime" EntityType="Self.WaterLevelRealtime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WaterQuality" EntityType="Self.WaterQuality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WeatherData" EntityType="Self.WeatherData" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

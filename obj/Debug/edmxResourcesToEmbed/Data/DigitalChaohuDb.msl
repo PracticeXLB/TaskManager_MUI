@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DigitalChaohuDbModelStoreContainer" CdmEntityContainer="DigitalChaohuDbEntities">
+    <EntitySetMapping Name="FractureSurfaceInfoes">
+      <EntityTypeMapping TypeName="DigitalChaohuDbModel.FractureSurfaceInfo">
+        <MappingFragment StoreEntitySet="FractureSurfaceInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FractureSurfaceName" ColumnName="FractureSurfaceName" />
+          <ScalarProperty Name="FractureSurfaceCode" ColumnName="FractureSurfaceCode" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="AppType" ColumnName="AppType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiteInfoes">
+      <EntityTypeMapping TypeName="DigitalChaohuDbModel.SiteInfo">
+        <MappingFragment StoreEntitySet="SiteInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="SiteCode" ColumnName="SiteCode" />
+          <ScalarProperty Name="AlertWaterLevel" ColumnName="AlertWaterLevel" />
+          <ScalarProperty Name="EnsureWaterLevel" ColumnName="EnsureWaterLevel" />
+          <ScalarProperty Name="AppType" ColumnName="AppType" />
+          <ScalarProperty Name="BelongToRiver" ColumnName="BelongToRiver" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WaterLevelHistories">
+      <EntityTypeMapping TypeName="DigitalChaohuDbModel.WaterLevelHistory">
+        <MappingFragment StoreEntitySet="WaterLevelHistory">
+          <ScalarProperty Name="station_code" ColumnName="station_code" />
+          <ScalarProperty Name="Record_time" ColumnName="Record_time" />
+          <ScalarProperty Name="FlowRate" ColumnName="FlowRate" />
+          <ScalarProperty Name="WaterLevel" ColumnName="WaterLevel" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WaterLevelRealtimes">
+      <EntityTypeMapping TypeName="DigitalChaohuDbModel.WaterLevelRealtime">
+        <MappingFragment StoreEntitySet="WaterLevelRealtime">
+          <ScalarProperty Name="station_code" ColumnName="station_code" />
+          <ScalarProperty Name="Record_time" ColumnName="Record_time" />
+          <ScalarProperty Name="FlowRate" ColumnName="FlowRate" />
+          <ScalarProperty Name="WaterLevel" ColumnName="WaterLevel" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WaterQualities">
+      <EntityTypeMapping TypeName="DigitalChaohuDbModel.WaterQuality">
+        <MappingFragment StoreEntitySet="WaterQuality">
+          <ScalarProperty Name="viewtype" ColumnName="viewtype" />
+          <ScalarProperty Name="qType" ColumnName="qType" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="station_code" ColumnName="station_code" />
+          <ScalarProperty Name="record_time" ColumnName="record_time" />
+          <ScalarProperty Name="cod" ColumnName="cod" />
+          <ScalarProperty Name="nh4" ColumnName="nh4" />
+          <ScalarProperty Name="tp" ColumnName="tp" />
+          <ScalarProperty Name="tn" ColumnName="tn" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeatherDatas">
+      <EntityTypeMapping TypeName="DigitalChaohuDbModel.WeatherData">
+        <MappingFragment StoreEntitySet="WeatherData">
+          <ScalarProperty Name="r" ColumnName="r" />
+          <ScalarProperty Name="t" ColumnName="t" />
+          <ScalarProperty Name="wo" ColumnName="wo" />
+          <ScalarProperty Name="ws" ColumnName="ws" />
+          <ScalarProperty Name="record_time" ColumnName="record_time" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlueAlgaes">
+      <EntityTypeMapping TypeName="DigitalChaohuDbModel.BlueAlgae">
+        <MappingFragment StoreEntitySet="BlueAlgae">
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="to_timestamp" ColumnName="to_timestamp" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="PicUrl" ColumnName="PicUrl" />
+          <ScalarProperty Name="D_level" ColumnName="D_level" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RainFalls">
+      <EntityTypeMapping TypeName="DigitalChaohuDbModel.RainFall">
+        <MappingFragment StoreEntitySet="RainFall">
+          <ScalarProperty Name="record_time" ColumnName="record_time" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="rainfall1" ColumnName="rainfall" />
+          <ScalarProperty Name="day_rainfall" ColumnName="day_rainfall" />
+          <ScalarProperty Name="year_rainfall" ColumnName="year_rainfall" />
+          <ScalarProperty Name="month_rainfall" ColumnName="month_rainfall" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Waterlevels">
+      <EntityTypeMapping TypeName="DigitalChaohuDbModel.Waterlevel">
+        <MappingFragment StoreEntitySet="Waterlevel">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="record_time" ColumnName="record_time" />
+          <ScalarProperty Name="waterlevel1" ColumnName="waterlevel" />
+          <ScalarProperty Name="guaranteedlevel" ColumnName="guaranteedlevel" />
+          <ScalarProperty Name="warninglevel" ColumnName="warninglevel" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

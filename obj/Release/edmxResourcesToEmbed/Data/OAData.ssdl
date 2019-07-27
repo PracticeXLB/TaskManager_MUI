@@ -1,0 +1,1746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DQDocModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApprovalFlowNodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FlowID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FlowNodeName" Type="nvarchar(max)" />
+    <Property Name="CIndex" Type="int" Nullable="false" />
+    <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApprovalFlowRecords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="WaitApprovalID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApprovalTypeValue" Type="int" Nullable="false" />
+    <Property Name="FlowID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FlowNodeID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Context" Type="nvarchar(max)" />
+    <Property Name="IsCompleted" Type="bit" Nullable="false" />
+    <Property Name="ApprovalRecordStatusValue" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApprovalFlows">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AppFloName" Type="nvarchar(max)" />
+    <Property Name="ApprovalTypeValue" Type="int" Nullable="false" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArchivesContentFileMappings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContentTemplateName" Type="nvarchar(max)" />
+    <Property Name="ContentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ArchivesFileCatalogueId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="CompanyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArchivesFileCatalogues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CatalogueName" Type="nvarchar(max)" />
+    <Property Name="ParentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CompanyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArchivesFiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar(max)" />
+    <Property Name="FileUrl" Type="nvarchar(max)" />
+    <Property Name="ArchivesFileCatalogueId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileSize" Type="bigint" Nullable="false" />
+    <Property Name="CompanyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileClass" Type="tinyint" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ArchivesFileWarehouseId" Type="uniqueidentifier" />
+    <Property Name="WarehouseName" Type="nvarchar(max)" />
+    <Property Name="Tag" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ArchivesFileWarehouses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="WarehouseName" Type="nvarchar(max)" />
+    <Property Name="ParentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CompanyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Attachments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="FileInfoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UploadUserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataYearId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AttachmentTypeId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AttachmentTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AttachmentTypeName" Type="nvarchar(max)" />
+    <Property Name="CurrentUserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BookMarks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomTemplateId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BookMarkName" Type="nvarchar(max)" />
+    <Property Name="BookMarkKey" Type="nvarchar(max)" />
+    <Property Name="IsFromExcel" Type="bit" Nullable="false" />
+    <Property Name="IsPicturemark" Type="bit" Nullable="false" />
+    <Property Name="ComputeInfo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BookMarkTagId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BookMarkType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CalibrationRecords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SN" Type="nvarchar(max)" />
+    <Property Name="CalibrationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Temperature" Type="nvarchar(max)" />
+    <Property Name="Humidity" Type="nvarchar(max)" />
+    <Property Name="GeographicalLocaltion" Type="nvarchar(max)" />
+    <Property Name="SpatialLocaltion" Type="nvarchar(max)" />
+    <Property Name="RecordDate" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CalibrationRecordTemps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SN" Type="nvarchar(max)" />
+    <Property Name="CalibrationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Temperature" Type="nvarchar(max)" />
+    <Property Name="Humidity" Type="nvarchar(max)" />
+    <Property Name="GeographicalLocaltion" Type="nvarchar(max)" />
+    <Property Name="SpatialLocaltion" Type="nvarchar(max)" />
+    <Property Name="RecordDate" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Calibrations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModelNumber" Type="nvarchar(max)" />
+    <Property Name="SN" Type="nvarchar(max)" />
+    <Property Name="CheckUnit" Type="nvarchar(max)" />
+    <Property Name="CertificateNumber" Type="nvarchar(max)" />
+    <Property Name="PeriodOfValidity" Type="datetime" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ScanningFileId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChartMappings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomTemplateId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ChartString" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ColdStorages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar(max)" />
+    <Property Name="PurchaserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationCharger" Type="nvarchar(max)" />
+    <Property Name="VerificationExeChanger" Type="nvarchar(max)" />
+    <Property Name="Keeper" Type="nvarchar(max)" />
+    <Property Name="DiviceKeeper" Type="nvarchar(max)" />
+    <Property Name="QualityKeeper" Type="nvarchar(max)" />
+    <Property Name="MaintainKeeper" Type="nvarchar(max)" />
+    <Property Name="StorageSetTypeValue" Type="int" Nullable="false" />
+    <Property Name="OutEnviroment" Type="nvarchar(max)" />
+    <Property Name="SetPostion" Type="nvarchar(max)" />
+    <Property Name="StartedDatetime" Type="datetime" Nullable="false" />
+    <Property Name="StorageLength" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StorageWidth" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StorageHeight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StorageVolumn" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DoorLength" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DoorWidth" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DoorHeight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ThermalInsuMaterial" Type="nvarchar(max)" />
+    <Property Name="ThermalSystemFactory" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataDate" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ColdStoreVerifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar(max)" />
+    <Property Name="ContractId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ColdStorageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VTStartTime" Type="datetime" Nullable="false" />
+    <Property Name="VTStopTime" Type="datetime" Nullable="false" />
+    <Property Name="DataAnaStartTime" Type="datetime" Nullable="false" />
+    <Property Name="DataAnaStopTime" Type="datetime" Nullable="false" />
+    <Property Name="InternalAuditStartTime" Type="datetime" Nullable="false" />
+    <Property Name="InternalAuditStopTime" Type="datetime" Nullable="false" />
+    <Property Name="stationPointAvg" Type="int" Nullable="false" />
+    <Property Name="stationPointSpe" Type="int" Nullable="false" />
+    <Property Name="EnvTempTestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="EnvTempTestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="EnvMaxTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FullLoadStartTime" Type="datetime" Nullable="false" />
+    <Property Name="FullLoadStopTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OpenDoorTime" Type="datetime" Nullable="false" />
+    <Property Name="CardNo1" Type="nvarchar(max)" />
+    <Property Name="CardNo2" Type="nvarchar(max)" />
+    <Property Name="TerminalNo1" Type="nvarchar(max)" />
+    <Property Name="TerminalNo2" Type="nvarchar(max)" />
+    <Property Name="AvgDifferCTNo1" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTNo2" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTMax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutStartTime" Type="datetime" Nullable="false" />
+    <Property Name="PowerCutStopTime" Type="datetime" Nullable="false" />
+    <Property Name="PowerCutTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutThermoTime" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Field1" Type="nvarchar(max)" />
+    <Property Name="Field2" Type="nvarchar(max)" />
+    <Property Name="Field3" Type="nvarchar(max)" />
+    <Property Name="Field4" Type="nvarchar(max)" />
+    <Property Name="Field5" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ColdStoreVerifySolutions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar(max)" />
+    <Property Name="ContractId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ColdStorageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VTStartTime" Type="datetime" Nullable="false" />
+    <Property Name="VTStopTime" Type="datetime" Nullable="false" />
+    <Property Name="DataAnaStartTime" Type="datetime" Nullable="false" />
+    <Property Name="DataAnaStopTime" Type="datetime" Nullable="false" />
+    <Property Name="InternalAuditStartTime" Type="datetime" Nullable="false" />
+    <Property Name="InternalAuditStopTime" Type="datetime" Nullable="false" />
+    <Property Name="stationPointAvg" Type="int" Nullable="false" />
+    <Property Name="stationPointSpe" Type="int" Nullable="false" />
+    <Property Name="EnvTempTestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="EnvTempTestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="EnvMaxTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FullLoadStartTime" Type="datetime" Nullable="false" />
+    <Property Name="FullLoadStopTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OpenDoorTime" Type="datetime" Nullable="false" />
+    <Property Name="CardNo1" Type="nvarchar(max)" />
+    <Property Name="CardNo2" Type="nvarchar(max)" />
+    <Property Name="TerminalNo1" Type="nvarchar(max)" />
+    <Property Name="TerminalNo2" Type="nvarchar(max)" />
+    <Property Name="AvgDifferCTNo1" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTNo2" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTMax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutStartTime" Type="datetime" Nullable="false" />
+    <Property Name="PowerCutStopTime" Type="datetime" Nullable="false" />
+    <Property Name="PowerCutTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutThermoTime" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommonDevices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataDate" Type="nvarchar(max)" />
+    <Property Name="PurchaserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DeviceName" Type="nvarchar(max)" />
+    <Property Name="DeviceType" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ProductDate" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="LegalRepresentative" Type="nvarchar(max)" />
+    <Property Name="BussinessScope" Type="nvarchar(max)" />
+    <Property Name="Code" Type="nvarchar(max)" />
+    <Property Name="Telephone" Type="nvarchar(max)" />
+    <Property Name="RegisterDate" Type="datetime" Nullable="false" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContractDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractTypeValue" Type="int" Nullable="false" />
+    <Property Name="ContractDetailExecuteStatusValue" Type="int" Nullable="false" />
+    <Property Name="ContractDetailExecutorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GoodsSale_Id" Type="uniqueidentifier" />
+    <Property Name="Verification_Id" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Contracts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="CompanyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractContent" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="SignatureDate" Type="datetime" Nullable="false" />
+    <Property Name="ContractExecutionDate" Type="datetime" Nullable="false" />
+    <Property Name="FileInfoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar(max)" />
+    <Property Name="ContractEndDate" Type="datetime" Nullable="false" />
+    <Property Name="WarningDate" Type="datetime" Nullable="false" />
+    <Property Name="CustomerSourceValue" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TotalMoney" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PrePayMoney" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsOwn" Type="bit" Nullable="false" />
+    <Property Name="ApprovalFlowId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApprovalString" Type="nvarchar(max)" />
+    <Property Name="ApprovalStatusValue" Type="int" Nullable="false" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Account" Type="nvarchar(max)" />
+    <Property Name="Pwd" Type="nvarchar(max)" />
+    <Property Name="EmployeeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PositionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+    <Property Name="PurchaserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsCompanyAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomBookMarks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BookMarkName" Type="nvarchar(max)" />
+    <Property Name="BookMarkKey" Type="nvarchar(max)" />
+    <Property Name="IsFromExcel" Type="bit" Nullable="false" />
+    <Property Name="IsPicturemark" Type="bit" Nullable="false" />
+    <Property Name="ComputeInfo" Type="nvarchar(max)" />
+    <Property Name="BookMarkType" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomFields">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FieldName" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="FieldType" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomTemplates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TemplateName" Type="nvarchar(max)" />
+    <Property Name="TemplateFilePath" Type="nvarchar(max)" />
+    <Property Name="TemplateFileId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataYears">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataYearName" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CurrentUserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="PId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ChargerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CompanyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="DocumentContent" Type="nvarchar(max)" />
+    <Property Name="FileInfoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApprovalStatusValue" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="GenderValue" Type="int" Nullable="false" />
+    <Property Name="BirthDate" Type="datetime" Nullable="false" />
+    <Property Name="EduBg" Type="nvarchar(max)" />
+    <Property Name="GraduateFrom" Type="nvarchar(max)" />
+    <Property Name="Major" Type="nvarchar(max)" />
+    <Property Name="JobExperienceYears" Type="int" Nullable="false" />
+    <Property Name="OfferDate" Type="datetime" Nullable="false" />
+    <Property Name="IsMarried" Type="bit" Nullable="false" />
+    <Property Name="BirthPlace" Type="nvarchar(max)" />
+    <Property Name="SID" Type="nvarchar(max)" />
+    <Property Name="DepartmentId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OnDutyValue" Type="int" Nullable="false" />
+    <Property Name="PositionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Tel" Type="nvarchar(max)" />
+    <Property Name="Tel2" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsCustomer" Type="bit" Nullable="false" />
+    <Property Name="PurchaserId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fans">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ColdStorageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Length" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Width" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Height" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ModelType" Type="nvarchar(max)" />
+    <Property Name="DistanceToWals" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar(max)" />
+    <Property Name="FanClass" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataDate" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FieldMappings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FieldId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FieldName" Type="nvarchar(max)" />
+    <Property Name="BusinessType" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FieldOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="FieldValueMappings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FieldMappingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BusinessId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FieldId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FieldValue" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FileInfoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="FileTypeValue" Type="int" Nullable="false" />
+    <Property Name="Path" Type="nvarchar(max)" />
+    <Property Name="FileStream" Type="varbinary(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CustomerId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GoodsInfos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Specific" Type="nvarchar(max)" />
+    <Property Name="ModelType" Type="nvarchar(max)" />
+    <Property Name="Unit" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="GoodsTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Factory" Type="nvarchar(max)" />
+    <Property Name="Tel" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Contactor" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GoodsSales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractDetailId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GoodsInfoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SaleCount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SalePrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GoodsTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Incubators">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PurchaserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationCharger" Type="nvarchar(max)" />
+    <Property Name="VerificationExeChanger" Type="nvarchar(max)" />
+    <Property Name="Keeper" Type="nvarchar(max)" />
+    <Property Name="QualityKeeper" Type="nvarchar(max)" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="SN" Type="nvarchar(max)" />
+    <Property Name="BrandModel" Type="nvarchar(max)" />
+    <Property Name="Volume" Type="nvarchar(max)" />
+    <Property Name="Accendant" Type="nvarchar(max)" />
+    <Property Name="ExternalSize" Type="nvarchar(max)" />
+    <Property Name="InternalSize" Type="nvarchar(max)" />
+    <Property Name="Weight" Type="nvarchar(max)" />
+    <Property Name="WallThickness" Type="nvarchar(max)" />
+    <Property Name="ExternalMaterial" Type="nvarchar(max)" />
+    <Property Name="InternalMaterial" Type="nvarchar(max)" />
+    <Property Name="IceBrand" Type="nvarchar(max)" />
+    <Property Name="IceCount" Type="nvarchar(max)" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="DataDate" Type="nvarchar(max)" />
+    <Property Name="ProductDate" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="IncubatorVerifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar(max)" />
+    <Property Name="ContractId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VTStartTime" Type="datetime" Nullable="false" />
+    <Property Name="VTStopTime" Type="datetime" Nullable="false" />
+    <Property Name="EnvMaxTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IncubatorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VTProperty" Type="nvarchar(max)" />
+    <Property Name="UnpackTestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="UnpackTestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="TestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="TestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="OuterEnvironment" Type="nvarchar(max)" />
+    <Property Name="TestCard" Type="nvarchar(max)" />
+    <Property Name="AverageDeviation" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VTAddress" Type="nvarchar(max)" />
+    <Property Name="Field1" Type="nvarchar(max)" />
+    <Property Name="Field2" Type="nvarchar(max)" />
+    <Property Name="Field3" Type="nvarchar(max)" />
+    <Property Name="Field4" Type="nvarchar(max)" />
+    <Property Name="Field5" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="IncubatorVerifySolutions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar(max)" />
+    <Property Name="ContractId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IncubatorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VTStartTime" Type="datetime" Nullable="false" />
+    <Property Name="VTStopTime" Type="datetime" Nullable="false" />
+    <Property Name="DataAnaStartTime" Type="datetime" Nullable="false" />
+    <Property Name="DataAnaStopTime" Type="datetime" Nullable="false" />
+    <Property Name="InternalAuditStartTime" Type="datetime" Nullable="false" />
+    <Property Name="InternalAuditStopTime" Type="datetime" Nullable="false" />
+    <Property Name="stationPointAvg" Type="int" Nullable="false" />
+    <Property Name="stationPointSpe" Type="int" Nullable="false" />
+    <Property Name="EnvTempTestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="EnvTempTestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="EnvMaxTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FullLoadStartTime" Type="datetime" Nullable="false" />
+    <Property Name="FullLoadStopTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OpenDoorTime" Type="datetime" Nullable="false" />
+    <Property Name="CardNo1" Type="nvarchar(max)" />
+    <Property Name="CardNo2" Type="nvarchar(max)" />
+    <Property Name="TerminalNo1" Type="nvarchar(max)" />
+    <Property Name="TerminalNo2" Type="nvarchar(max)" />
+    <Property Name="AvgDifferCTNo1" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTNo2" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTMax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutStartTime" Type="datetime" Nullable="false" />
+    <Property Name="PowerCutStopTime" Type="datetime" Nullable="false" />
+    <Property Name="PowerCutTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutThermoTime" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InInventoryDate" Type="datetime" Nullable="false" />
+    <Property Name="ProductDate" Type="datetime" Nullable="false" />
+    <Property Name="Batch" Type="nvarchar(max)" />
+    <Property Name="GoodsInfosId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SupplyUnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="InventoryCount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SupplyOrderDetailsId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SupplyOrderId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PayDate" Type="datetime" Nullable="false" />
+    <Property Name="PayedMoney" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsInvoiced" Type="bit" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogInfoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LogContent" Type="nvarchar(max)" />
+    <Property Name="LogName" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="Ip" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Pid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Path" Type="nvarchar(max)" />
+    <Property Name="Args" Type="nvarchar(max)" />
+    <Property Name="PIndex" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OATask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PurchaseId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TaskName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Remark" Type="varchar" MaxLength="500" />
+    <Property Name="Excutor" Type="varchar" MaxLength="200" />
+    <Property Name="Status" Type="varchar" MaxLength="200" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="UpdateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Positions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Purchasers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Charger" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Contactor" Type="nvarchar(max)" />
+    <Property Name="Tel1" Type="nvarchar(max)" />
+    <Property Name="Tel2" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="Fax" Type="nvarchar(max)" />
+    <Property Name="ZipCode" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RemoteUserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataDate" Type="nvarchar(max)" />
+    <Property Name="FileInfoId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Refrigerators">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PurchaserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationCharger" Type="nvarchar(max)" />
+    <Property Name="VerificationExeChanger" Type="nvarchar(max)" />
+    <Property Name="Keeper" Type="nvarchar(max)" />
+    <Property Name="QualityKeeper" Type="nvarchar(max)" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="PlateNumber" Type="nvarchar(max)" />
+    <Property Name="BrandModel" Type="nvarchar(max)" />
+    <Property Name="Manufacturer" Type="nvarchar(max)" />
+    <Property Name="RefrigeratingSystemFactory" Type="nvarchar(max)" />
+    <Property Name="CarriageDimension" Type="nvarchar(max)" />
+    <Property Name="Driver" Type="nvarchar(max)" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="SpecificationVolume" Type="nvarchar(max)" />
+    <Property Name="DataDate" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="RefrigeratorVerifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar(max)" />
+    <Property Name="ContractId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RefrigeratorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VTStartTime" Type="datetime" Nullable="false" />
+    <Property Name="VTStopTime" Type="datetime" Nullable="false" />
+    <Property Name="stationPointAvg" Type="int" Nullable="false" />
+    <Property Name="stationPointSpe" Type="int" Nullable="false" />
+    <Property Name="EnvTempTestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="EnvTempTestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="EnvMaxTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FullLoadStartTime" Type="datetime" Nullable="false" />
+    <Property Name="FullLoadStopTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestStartTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestStopTime" Type="datetime" Nullable="false" />
+    <Property Name="OpenDoorTestTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CardNo1" Type="nvarchar(max)" />
+    <Property Name="CardNo2" Type="nvarchar(max)" />
+    <Property Name="AvgDifferCTNo1" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTNo2" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTMax" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutStartTime" Type="datetime" Nullable="false" />
+    <Property Name="PowerCutStopTime" Type="datetime" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VTTarget" Type="nvarchar(max)" />
+    <Property Name="EnvironmentPointSpe" Type="int" Nullable="false" />
+    <Property Name="PowerCutEnvironmentTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutInnerTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="LowerLimit" Type="nvarchar(max)" />
+    <Property Name="DifferenceValue" Type="nvarchar(max)" />
+    <Property Name="Interval" Type="nvarchar(max)" />
+    <Property Name="TriggerAlarmTime" Type="nvarchar(max)" />
+    <Property Name="InitTemp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CoolingStartTime" Type="datetime" Nullable="false" />
+    <Property Name="CoolingStopTime" Type="datetime" Nullable="false" />
+    <Property Name="ReportDate" Type="nvarchar(max)" />
+    <Property Name="Field1" Type="nvarchar(max)" />
+    <Property Name="Field2" Type="nvarchar(max)" />
+    <Property Name="Field3" Type="nvarchar(max)" />
+    <Property Name="Field4" Type="nvarchar(max)" />
+    <Property Name="Field5" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="RefrigeratorVerifySolutions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar(max)" />
+    <Property Name="ContractId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RefrigeratorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="stationPointAvg" Type="nvarchar(max)" />
+    <Property Name="stationPointSpe" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PlanVerifyDate" Type="datetime" Nullable="false" />
+    <Property Name="VerifyDate" Type="datetime" Nullable="false" />
+    <Property Name="VerifyCharacter" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleWithMenus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MenuId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BusinessAuthValue" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleWithUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SaleOrderDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GoodsInfos" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SupplyPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GoodsCount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SaleOrdersId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GoodsInfo_Id" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="SaleOrders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SaleOrderCode" Type="nvarchar(max)" />
+    <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GoodsCount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PurchasersId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SaleOrderStatusValue" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ShortMessages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReceiveUserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="Sender" Type="nvarchar(max)" />
+    <Property Name="IsRead" Type="bit" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusFields">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FieldName" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplyers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Charger" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Contactor" Type="nvarchar(max)" />
+    <Property Name="Tel1" Type="nvarchar(max)" />
+    <Property Name="Tel2" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="Fax" Type="nvarchar(max)" />
+    <Property Name="ZipCode" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SupplyOrderDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GoodsInfos" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GoodsCount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SupplyOrdersId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GoodsInfo_Id" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="SupplyOrders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OrderCode" Type="nvarchar(max)" />
+    <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GoodsCount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SupplyersId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SupplyStatusValue" Type="int" Nullable="false" />
+    <Property Name="ArrivalDate" Type="datetime" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ParentId" Type="uniqueidentifier" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+    <Property Name="SortCode" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_ItemsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ItemId" Type="uniqueidentifier" />
+    <Property Name="ParentId" Type="uniqueidentifier" />
+    <Property Name="ItemCode" Type="nvarchar(max)" />
+    <Property Name="ItemName" Type="nvarchar(max)" />
+    <Property Name="ItemValue" Type="nvarchar(max)" />
+    <Property Name="IsDefault" Type="bit" Nullable="false" />
+    <Property Name="SortCode" Type="int" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserPowers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ItemsDetailID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ItemsDetailName" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Verifications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContractDetailId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SchemeFileId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SchemeUserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SchemeMemo" Type="nvarchar(max)" />
+    <Property Name="SchemeDatetime" Type="datetime" />
+    <Property Name="ExecuteTime" Type="datetime" />
+    <Property Name="ExecuteDataFileId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ExecuteMemo" Type="nvarchar(max)" />
+    <Property Name="ReporterId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="VerificationFileInfoId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReportMemo" Type="nvarchar(max)" />
+    <Property Name="ReportDatetime" Type="datetime" />
+    <Property Name="VerificationTypeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="VerifiactionTimes" Type="int" Nullable="false" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VerifiactionStatusValue" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OriginalVerifyDataFileId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VerificationTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Unit" Type="nvarchar(max)" />
+    <Property Name="Memo" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VeryficationCharacters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AttachmentTypeName" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="CreateUid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdateUid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_ApprovalFlowNodes_dbo_ApprovalFlows_FlowID">
+    <End Role="ApprovalFlows" Type="Self.ApprovalFlows" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ApprovalFlowNodes" Type="Self.ApprovalFlowNodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApprovalFlows">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApprovalFlowNodes">
+        <PropertyRef Name="FlowID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BookMarks_dbo_CustomTemplates_CustomTemplateId">
+    <End Role="CustomTemplates" Type="Self.CustomTemplates" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BookMarks" Type="Self.BookMarks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomTemplates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookMarks">
+        <PropertyRef Name="CustomTemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChartMappings_dbo_CustomTemplates_CustomTemplateId">
+    <End Role="CustomTemplates" Type="Self.CustomTemplates" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChartMappings" Type="Self.ChartMappings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomTemplates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChartMappings">
+        <PropertyRef Name="CustomTemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ColdStorages_dbo_Purchasers_PurchaserId">
+    <End Role="Purchasers" Type="Self.Purchasers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ColdStorages" Type="Self.ColdStorages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchasers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ColdStorages">
+        <PropertyRef Name="PurchaserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ContractDetails_dbo_Contracts_ContractId">
+    <End Role="Contracts" Type="Self.Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ContractDetails" Type="Self.ContractDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contracts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractDetails">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ContractDetails_dbo_GoodsSales_GoodsSale_Id">
+    <End Role="GoodsSales" Type="Self.GoodsSales" Multiplicity="0..1" />
+    <End Role="ContractDetails" Type="Self.ContractDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoodsSales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractDetails">
+        <PropertyRef Name="GoodsSale_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ContractDetails_dbo_Verifications_Verification_Id">
+    <End Role="Verifications" Type="Self.Verifications" Multiplicity="0..1" />
+    <End Role="ContractDetails" Type="Self.ContractDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Verifications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractDetails">
+        <PropertyRef Name="Verification_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CUsers_dbo_Employees_EmployeeId">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CUsers" Type="Self.CUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CUsers">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CUsers_dbo_Positions_PositionId">
+    <End Role="Positions" Type="Self.Positions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CUsers" Type="Self.CUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CUsers">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Fans_dbo_ColdStorages_ColdStorageId">
+    <End Role="ColdStorages" Type="Self.ColdStorages" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fans" Type="Self.Fans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ColdStorages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Fans">
+        <PropertyRef Name="ColdStorageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Incubators_dbo_Purchasers_PurchaserId">
+    <End Role="Purchasers" Type="Self.Purchasers" Multiplicity="1" />
+    <End Role="Incubators" Type="Self.Incubators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchasers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incubators">
+        <PropertyRef Name="PurchaserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Inventories_dbo_GoodsInfos_GoodsInfosId">
+    <End Role="GoodsInfos" Type="Self.GoodsInfos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Inventories" Type="Self.Inventories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoodsInfos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Inventories">
+        <PropertyRef Name="GoodsInfosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Invoices_dbo_Contracts_ContractId">
+    <End Role="Contracts" Type="Self.Contracts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contracts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Refrigerators_dbo_Purchasers_PurchaserId">
+    <End Role="Purchasers" Type="Self.Purchasers" Multiplicity="1" />
+    <End Role="Refrigerators" Type="Self.Refrigerators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchasers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Refrigerators">
+        <PropertyRef Name="PurchaserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RoleWithUsers_dbo_CUsers_UserId">
+    <End Role="CUsers" Type="Self.CUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleWithUsers" Type="Self.RoleWithUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleWithUsers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RoleWithUsers_dbo_Roles_RoleId">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleWithUsers" Type="Self.RoleWithUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleWithUsers">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SaleOrderDetails_dbo_GoodsInfos_GoodsInfo_Id">
+    <End Role="GoodsInfos" Type="Self.GoodsInfos" Multiplicity="0..1" />
+    <End Role="SaleOrderDetails" Type="Self.SaleOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoodsInfos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleOrderDetails">
+        <PropertyRef Name="GoodsInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId">
+    <End Role="SaleOrders" Type="Self.SaleOrders" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SaleOrderDetails" Type="Self.SaleOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleOrders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleOrderDetails">
+        <PropertyRef Name="SaleOrdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SaleOrders_dbo_Purchasers_PurchasersId">
+    <End Role="Purchasers" Type="Self.Purchasers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SaleOrders" Type="Self.SaleOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchasers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleOrders">
+        <PropertyRef Name="PurchasersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SupplyOrderDetails_dbo_GoodsInfos_GoodsInfo_Id">
+    <End Role="GoodsInfos" Type="Self.GoodsInfos" Multiplicity="0..1" />
+    <End Role="SupplyOrderDetails" Type="Self.SupplyOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoodsInfos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupplyOrderDetails">
+        <PropertyRef Name="GoodsInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId">
+    <End Role="SupplyOrders" Type="Self.SupplyOrders" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SupplyOrderDetails" Type="Self.SupplyOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SupplyOrders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupplyOrderDetails">
+        <PropertyRef Name="SupplyOrdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId">
+    <End Role="Supplyers" Type="Self.Supplyers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SupplyOrders" Type="Self.SupplyOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplyers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupplyOrders">
+        <PropertyRef Name="SupplyersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DQDocModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApprovalFlowNodes" EntityType="Self.ApprovalFlowNodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApprovalFlowRecords" EntityType="Self.ApprovalFlowRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApprovalFlows" EntityType="Self.ApprovalFlows" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArchivesContentFileMappings" EntityType="Self.ArchivesContentFileMappings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArchivesFileCatalogues" EntityType="Self.ArchivesFileCatalogues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArchivesFiles" EntityType="Self.ArchivesFiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArchivesFileWarehouses" EntityType="Self.ArchivesFileWarehouses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Attachments" EntityType="Self.Attachments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AttachmentTypes" EntityType="Self.AttachmentTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookMarks" EntityType="Self.BookMarks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CalibrationRecords" EntityType="Self.CalibrationRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CalibrationRecordTemps" EntityType="Self.CalibrationRecordTemps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Calibrations" EntityType="Self.Calibrations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChartMappings" EntityType="Self.ChartMappings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ColdStorages" EntityType="Self.ColdStorages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ColdStoreVerifications" EntityType="Self.ColdStoreVerifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ColdStoreVerifySolutions" EntityType="Self.ColdStoreVerifySolutions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommonDevices" EntityType="Self.CommonDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContractDetails" EntityType="Self.ContractDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contracts" EntityType="Self.Contracts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUsers" EntityType="Self.CUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomBookMarks" EntityType="Self.CustomBookMarks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomFields" EntityType="Self.CustomFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomTemplates" EntityType="Self.CustomTemplates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataYears" EntityType="Self.DataYears" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fans" EntityType="Self.Fans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FieldMappings" EntityType="Self.FieldMappings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FieldValueMappings" EntityType="Self.FieldValueMappings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileInfoes" EntityType="Self.FileInfoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GoodsInfos" EntityType="Self.GoodsInfos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GoodsSales" EntityType="Self.GoodsSales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GoodsTypes" EntityType="Self.GoodsTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Incubators" EntityType="Self.Incubators" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncubatorVerifications" EntityType="Self.IncubatorVerifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncubatorVerifySolutions" EntityType="Self.IncubatorVerifySolutions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventories" EntityType="Self.Inventories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogInfoes" EntityType="Self.LogInfoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OATask" EntityType="Self.OATask" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchasers" EntityType="Self.Purchasers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Refrigerators" EntityType="Self.Refrigerators" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RefrigeratorVerifications" EntityType="Self.RefrigeratorVerifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RefrigeratorVerifySolutions" EntityType="Self.RefrigeratorVerifySolutions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleWithMenus" EntityType="Self.RoleWithMenus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleWithUsers" EntityType="Self.RoleWithUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleOrderDetails" EntityType="Self.SaleOrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleOrders" EntityType="Self.SaleOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShortMessages" EntityType="Self.ShortMessages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusFields" EntityType="Self.StatusFields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplyers" EntityType="Self.Supplyers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SupplyOrderDetails" EntityType="Self.SupplyOrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SupplyOrders" EntityType="Self.SupplyOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sys_Items" EntityType="Self.Sys_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sys_ItemsDetail" EntityType="Self.Sys_ItemsDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPowers" EntityType="Self.UserPowers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Verifications" EntityType="Self.Verifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VerificationTypes" EntityType="Self.VerificationTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VeryficationCharacters" EntityType="Self.VeryficationCharacters" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_ApprovalFlowNodes_dbo_ApprovalFlows_FlowID" Association="Self.FK_dbo_ApprovalFlowNodes_dbo_ApprovalFlows_FlowID">
+      <End Role="ApprovalFlows" EntitySet="ApprovalFlows" />
+      <End Role="ApprovalFlowNodes" EntitySet="ApprovalFlowNodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BookMarks_dbo_CustomTemplates_CustomTemplateId" Association="Self.FK_dbo_BookMarks_dbo_CustomTemplates_CustomTemplateId">
+      <End Role="CustomTemplates" EntitySet="CustomTemplates" />
+      <End Role="BookMarks" EntitySet="BookMarks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChartMappings_dbo_CustomTemplates_CustomTemplateId" Association="Self.FK_dbo_ChartMappings_dbo_CustomTemplates_CustomTemplateId">
+      <End Role="CustomTemplates" EntitySet="CustomTemplates" />
+      <End Role="ChartMappings" EntitySet="ChartMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ColdStorages_dbo_Purchasers_PurchaserId" Association="Self.FK_dbo_ColdStorages_dbo_Purchasers_PurchaserId">
+      <End Role="Purchasers" EntitySet="Purchasers" />
+      <End Role="ColdStorages" EntitySet="ColdStorages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ContractDetails_dbo_Contracts_ContractId" Association="Self.FK_dbo_ContractDetails_dbo_Contracts_ContractId">
+      <End Role="Contracts" EntitySet="Contracts" />
+      <End Role="ContractDetails" EntitySet="ContractDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ContractDetails_dbo_GoodsSales_GoodsSale_Id" Association="Self.FK_dbo_ContractDetails_dbo_GoodsSales_GoodsSale_Id">
+      <End Role="GoodsSales" EntitySet="GoodsSales" />
+      <End Role="ContractDetails" EntitySet="ContractDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ContractDetails_dbo_Verifications_Verification_Id" Association="Self.FK_dbo_ContractDetails_dbo_Verifications_Verification_Id">
+      <End Role="Verifications" EntitySet="Verifications" />
+      <End Role="ContractDetails" EntitySet="ContractDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CUsers_dbo_Employees_EmployeeId" Association="Self.FK_dbo_CUsers_dbo_Employees_EmployeeId">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="CUsers" EntitySet="CUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CUsers_dbo_Positions_PositionId" Association="Self.FK_dbo_CUsers_dbo_Positions_PositionId">
+      <End Role="Positions" EntitySet="Positions" />
+      <End Role="CUsers" EntitySet="CUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Fans_dbo_ColdStorages_ColdStorageId" Association="Self.FK_dbo_Fans_dbo_ColdStorages_ColdStorageId">
+      <End Role="ColdStorages" EntitySet="ColdStorages" />
+      <End Role="Fans" EntitySet="Fans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Incubators_dbo_Purchasers_PurchaserId" Association="Self.FK_dbo_Incubators_dbo_Purchasers_PurchaserId">
+      <End Role="Purchasers" EntitySet="Purchasers" />
+      <End Role="Incubators" EntitySet="Incubators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Inventories_dbo_GoodsInfos_GoodsInfosId" Association="Self.FK_dbo_Inventories_dbo_GoodsInfos_GoodsInfosId">
+      <End Role="GoodsInfos" EntitySet="GoodsInfos" />
+      <End Role="Inventories" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Invoices_dbo_Contracts_ContractId" Association="Self.FK_dbo_Invoices_dbo_Contracts_ContractId">
+      <End Role="Contracts" EntitySet="Contracts" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Refrigerators_dbo_Purchasers_PurchaserId" Association="Self.FK_dbo_Refrigerators_dbo_Purchasers_PurchaserId">
+      <End Role="Purchasers" EntitySet="Purchasers" />
+      <End Role="Refrigerators" EntitySet="Refrigerators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RoleWithUsers_dbo_CUsers_UserId" Association="Self.FK_dbo_RoleWithUsers_dbo_CUsers_UserId">
+      <End Role="CUsers" EntitySet="CUsers" />
+      <End Role="RoleWithUsers" EntitySet="RoleWithUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RoleWithUsers_dbo_Roles_RoleId" Association="Self.FK_dbo_RoleWithUsers_dbo_Roles_RoleId">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RoleWithUsers" EntitySet="RoleWithUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SaleOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" Association="Self.FK_dbo_SaleOrderDetails_dbo_GoodsInfos_GoodsInfo_Id">
+      <End Role="GoodsInfos" EntitySet="GoodsInfos" />
+      <End Role="SaleOrderDetails" EntitySet="SaleOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId" Association="Self.FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId">
+      <End Role="SaleOrders" EntitySet="SaleOrders" />
+      <End Role="SaleOrderDetails" EntitySet="SaleOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SaleOrders_dbo_Purchasers_PurchasersId" Association="Self.FK_dbo_SaleOrders_dbo_Purchasers_PurchasersId">
+      <End Role="Purchasers" EntitySet="Purchasers" />
+      <End Role="SaleOrders" EntitySet="SaleOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SupplyOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" Association="Self.FK_dbo_SupplyOrderDetails_dbo_GoodsInfos_GoodsInfo_Id">
+      <End Role="GoodsInfos" EntitySet="GoodsInfos" />
+      <End Role="SupplyOrderDetails" EntitySet="SupplyOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId" Association="Self.FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId">
+      <End Role="SupplyOrders" EntitySet="SupplyOrders" />
+      <End Role="SupplyOrderDetails" EntitySet="SupplyOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId" Association="Self.FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId">
+      <End Role="Supplyers" EntitySet="Supplyers" />
+      <End Role="SupplyOrders" EntitySet="SupplyOrders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

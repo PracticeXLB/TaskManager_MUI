@@ -1,0 +1,13 @@
+D:\DQ\OAMobileBackEnd\obj\Debug\OAMobileBackEnd.csproj.CoreCompileInputs.cache
+D:\DQ\OAMobileBackEnd\bin\OAMobileBackEnd.dll.config
+D:\DQ\OAMobileBackEnd\bin\OAMobileBackEnd.dll
+D:\DQ\OAMobileBackEnd\bin\OAMobileBackEnd.pdb
+D:\DQ\OAMobileBackEnd\bin\EntityFramework.dll
+D:\DQ\OAMobileBackEnd\bin\Newtonsoft.Json.dll
+D:\DQ\OAMobileBackEnd\bin\EntityFramework.xml
+D:\DQ\OAMobileBackEnd\bin\Newtonsoft.Json.xml
+D:\DQ\OAMobileBackEnd\bin\zh-Hans\EntityFramework.resources.dll
+D:\DQ\OAMobileBackEnd\obj\Debug\OAMobileBackEnd.csproj.CopyComplete
+D:\DQ\OAMobileBackEnd\obj\Debug\OAMobileBackEnd.dll
+D:\DQ\OAMobileBackEnd\obj\Debug\OAMobileBackEnd.pdb
+D:\DQ\OAMobileBackEnd\obj\Debug\OAMobileBackEnd.csprojAssemblyReference.cache

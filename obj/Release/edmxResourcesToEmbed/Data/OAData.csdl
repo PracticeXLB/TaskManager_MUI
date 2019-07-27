@@ -1,0 +1,1790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DQDocModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApprovalFlowNode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FlowID" Type="Guid" Nullable="false" />
+    <Property Name="FlowNodeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CIndex" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ApprovalFlow" Relationship="Self.FK_dbo_ApprovalFlowNodes_dbo_ApprovalFlows_FlowID" FromRole="ApprovalFlowNodes" ToRole="ApprovalFlows" />
+  </EntityType>
+  <EntityType Name="ApprovalFlowRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WaitApprovalID" Type="Guid" Nullable="false" />
+    <Property Name="ApprovalTypeValue" Type="Int32" Nullable="false" />
+    <Property Name="FlowID" Type="Guid" Nullable="false" />
+    <Property Name="FlowNodeID" Type="Guid" Nullable="false" />
+    <Property Name="Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsCompleted" Type="Boolean" Nullable="false" />
+    <Property Name="ApprovalRecordStatusValue" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApprovalFlow">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="AppFloName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovalTypeValue" Type="Int32" Nullable="false" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ApprovalFlowNodes" Relationship="Self.FK_dbo_ApprovalFlowNodes_dbo_ApprovalFlows_FlowID" FromRole="ApprovalFlows" ToRole="ApprovalFlowNodes" />
+  </EntityType>
+  <EntityType Name="ArchivesContentFileMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ContentTemplateName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContentId" Type="Guid" Nullable="false" />
+    <Property Name="ArchivesFileCatalogueId" Type="Guid" Nullable="false" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="CompanyId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArchivesFileCatalogue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CatalogueName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Guid" Nullable="false" />
+    <Property Name="CompanyId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArchivesFile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ArchivesFileCatalogueId" Type="Guid" Nullable="false" />
+    <Property Name="FileSize" Type="Int64" Nullable="false" />
+    <Property Name="CompanyId" Type="Guid" Nullable="false" />
+    <Property Name="FileClass" Type="Byte" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="ArchivesFileWarehouseId" Type="Guid" />
+    <Property Name="WarehouseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ArchivesFileWarehous">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="WarehouseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Guid" Nullable="false" />
+    <Property Name="CompanyId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Attachment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileInfoId" Type="Guid" Nullable="false" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="UploadUserId" Type="Guid" Nullable="false" />
+    <Property Name="DataYearId" Type="Guid" Nullable="false" />
+    <Property Name="AttachmentTypeId" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AttachmentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="AttachmentTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentUserId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BookMark">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CustomTemplateId" Type="Guid" Nullable="false" />
+    <Property Name="BookMarkName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BookMarkKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsFromExcel" Type="Boolean" Nullable="false" />
+    <Property Name="IsPicturemark" Type="Boolean" Nullable="false" />
+    <Property Name="ComputeInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="BookMarkTagId" Type="Guid" Nullable="false" />
+    <Property Name="BookMarkType" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CustomTemplate" Relationship="Self.FK_dbo_BookMarks_dbo_CustomTemplates_CustomTemplateId" FromRole="BookMarks" ToRole="CustomTemplates" />
+  </EntityType>
+  <EntityType Name="CalibrationRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="SN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CalibrationId" Type="Guid" Nullable="false" />
+    <Property Name="Temperature" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Humidity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GeographicalLocaltion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpatialLocaltion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecordDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CalibrationRecordTemp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="SN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CalibrationId" Type="Guid" Nullable="false" />
+    <Property Name="Temperature" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Humidity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GeographicalLocaltion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpatialLocaltion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecordDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Calibration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ModelNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CheckUnit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CertificateNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PeriodOfValidity" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="ScanningFileId" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChartMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CustomTemplateId" Type="Guid" Nullable="false" />
+    <Property Name="ChartString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="CustomTemplate" Relationship="Self.FK_dbo_ChartMappings_dbo_CustomTemplates_CustomTemplateId" FromRole="ChartMappings" ToRole="CustomTemplates" />
+  </EntityType>
+  <EntityType Name="ColdStorage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PurchaserId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationCharger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VerificationExeChanger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keeper" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DiviceKeeper" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QualityKeeper" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaintainKeeper" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StorageSetTypeValue" Type="Int32" Nullable="false" />
+    <Property Name="OutEnviroment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SetPostion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StartedDatetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StorageLength" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StorageWidth" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StorageHeight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StorageVolumn" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DoorLength" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DoorWidth" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DoorHeight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ThermalInsuMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ThermalSystemFactory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="DataDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Purchaser" Relationship="Self.FK_dbo_ColdStorages_dbo_Purchasers_PurchaserId" FromRole="ColdStorages" ToRole="Purchasers" />
+    <NavigationProperty Name="Fans" Relationship="Self.FK_dbo_Fans_dbo_ColdStorages_ColdStorageId" FromRole="ColdStorages" ToRole="Fans" />
+  </EntityType>
+  <EntityType Name="ColdStoreVerification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContractId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationId" Type="Guid" Nullable="false" />
+    <Property Name="ColdStorageId" Type="Guid" Nullable="false" />
+    <Property Name="VTStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VTStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataAnaStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataAnaStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InternalAuditStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InternalAuditStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="stationPointAvg" Type="Int32" Nullable="false" />
+    <Property Name="stationPointSpe" Type="Int32" Nullable="false" />
+    <Property Name="EnvTempTestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EnvTempTestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EnvMaxTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FullLoadStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FullLoadStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OpenDoorTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CardNo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardNo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TerminalNo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TerminalNo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AvgDifferCTNo1" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTNo2" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTMax" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PowerCutStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PowerCutTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutThermoTime" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="Field1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ColdStoreVerifySolution">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContractId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationId" Type="Guid" Nullable="false" />
+    <Property Name="ColdStorageId" Type="Guid" Nullable="false" />
+    <Property Name="VTStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VTStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataAnaStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataAnaStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InternalAuditStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InternalAuditStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="stationPointAvg" Type="Int32" Nullable="false" />
+    <Property Name="stationPointSpe" Type="Int32" Nullable="false" />
+    <Property Name="EnvTempTestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EnvTempTestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EnvMaxTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FullLoadStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FullLoadStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OpenDoorTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CardNo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardNo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TerminalNo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TerminalNo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AvgDifferCTNo1" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTNo2" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTMax" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PowerCutStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PowerCutTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutThermoTime" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommonDevice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DataDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PurchaserId" Type="Guid" Nullable="false" />
+    <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LegalRepresentative" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BussinessScope" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContractDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ContractId" Type="Guid" Nullable="false" />
+    <Property Name="ContractTypeValue" Type="Int32" Nullable="false" />
+    <Property Name="ContractDetailExecuteStatusValue" Type="Int32" Nullable="false" />
+    <Property Name="ContractDetailExecutorId" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="GoodsSale_Id" Type="Guid" />
+    <Property Name="Verification_Id" Type="Guid" />
+    <NavigationProperty Name="Contract" Relationship="Self.FK_dbo_ContractDetails_dbo_Contracts_ContractId" FromRole="ContractDetails" ToRole="Contracts" />
+    <NavigationProperty Name="GoodsSale" Relationship="Self.FK_dbo_ContractDetails_dbo_GoodsSales_GoodsSale_Id" FromRole="ContractDetails" ToRole="GoodsSales" />
+    <NavigationProperty Name="Verification" Relationship="Self.FK_dbo_ContractDetails_dbo_Verifications_Verification_Id" FromRole="ContractDetails" ToRole="Verifications" />
+  </EntityType>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyId" Type="Guid" Nullable="false" />
+    <Property Name="ContractContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SignatureDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ContractExecutionDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FileInfoId" Type="Guid" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContractEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WarningDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CustomerSourceValue" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Guid" Nullable="false" />
+    <Property Name="TotalMoney" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PrePayMoney" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsOwn" Type="Boolean" Nullable="false" />
+    <Property Name="ApprovalFlowId" Type="Guid" Nullable="false" />
+    <Property Name="ApprovalString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ApprovalStatusValue" Type="Int32" Nullable="false" />
+    <Property Name="IsValid" Type="Boolean" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ContractDetails" Relationship="Self.FK_dbo_ContractDetails_dbo_Contracts_ContractId" FromRole="Contracts" ToRole="ContractDetails" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK_dbo_Invoices_dbo_Contracts_ContractId" FromRole="Contracts" ToRole="Invoices" />
+  </EntityType>
+  <EntityType Name="CUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Account" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeId" Type="Guid" Nullable="false" />
+    <Property Name="PositionId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+    <Property Name="PurchaserId" Type="Guid" Nullable="false" />
+    <Property Name="IsCompanyAdmin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_dbo_CUsers_dbo_Employees_EmployeeId" FromRole="CUsers" ToRole="Employees" />
+    <NavigationProperty Name="Position" Relationship="Self.FK_dbo_CUsers_dbo_Positions_PositionId" FromRole="CUsers" ToRole="Positions" />
+    <NavigationProperty Name="RoleWithUsers" Relationship="Self.FK_dbo_RoleWithUsers_dbo_CUsers_UserId" FromRole="CUsers" ToRole="RoleWithUsers" />
+  </EntityType>
+  <EntityType Name="CustomBookMark">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="BookMarkName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BookMarkKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsFromExcel" Type="Boolean" Nullable="false" />
+    <Property Name="IsPicturemark" Type="Boolean" Nullable="false" />
+    <Property Name="ComputeInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BookMarkType" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomField">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FieldName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FieldType" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="TemplateName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TemplateFilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TemplateFileId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="BookMarks" Relationship="Self.FK_dbo_BookMarks_dbo_CustomTemplates_CustomTemplateId" FromRole="CustomTemplates" ToRole="BookMarks" />
+    <NavigationProperty Name="ChartMappings" Relationship="Self.FK_dbo_ChartMappings_dbo_CustomTemplates_CustomTemplateId" FromRole="CustomTemplates" ToRole="ChartMappings" />
+  </EntityType>
+  <EntityType Name="DataYear">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DataYearName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentUserId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PId" Type="Guid" Nullable="false" />
+    <Property Name="ChargerId" Type="Guid" Nullable="false" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileInfoId" Type="Guid" Nullable="false" />
+    <Property Name="ApprovalStatusValue" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Guid" Nullable="false" />
+    <Property Name="ContractId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GenderValue" Type="Int32" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EduBg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GraduateFrom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Major" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="JobExperienceYears" Type="Int32" Nullable="false" />
+    <Property Name="OfferDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsMarried" Type="Boolean" Nullable="false" />
+    <Property Name="BirthPlace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentId" Type="Guid" Nullable="false" />
+    <Property Name="OnDutyValue" Type="Int32" Nullable="false" />
+    <Property Name="PositionId" Type="Guid" Nullable="false" />
+    <Property Name="Tel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tel2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="IsCustomer" Type="Boolean" Nullable="false" />
+    <Property Name="PurchaserId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="CUsers" Relationship="Self.FK_dbo_CUsers_dbo_Employees_EmployeeId" FromRole="Employees" ToRole="CUsers" />
+  </EntityType>
+  <EntityType Name="Fan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ColdStorageId" Type="Guid" Nullable="false" />
+    <Property Name="Length" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Width" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Height" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ModelType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DistanceToWals" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DocumentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FanClass" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="DataDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ColdStorage" Relationship="Self.FK_dbo_Fans_dbo_ColdStorages_ColdStorageId" FromRole="Fans" ToRole="ColdStorages" />
+  </EntityType>
+  <EntityType Name="FieldMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FieldId" Type="Guid" Nullable="false" />
+    <Property Name="FieldName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BusinessType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="FieldOrder" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FieldValueMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FieldMappingId" Type="Guid" Nullable="false" />
+    <Property Name="BusinessId" Type="Guid" Nullable="false" />
+    <Property Name="FieldId" Type="Guid" Nullable="false" />
+    <Property Name="FieldValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FileInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileTypeValue" Type="Int32" Nullable="false" />
+    <Property Name="Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileStream" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="CustomerId" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GoodsInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Specific" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModelType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GoodsTypeId" Type="Guid" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Factory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Contactor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Inventories" Relationship="Self.FK_dbo_Inventories_dbo_GoodsInfos_GoodsInfosId" FromRole="GoodsInfos" ToRole="Inventories" />
+    <NavigationProperty Name="SaleOrderDetails" Relationship="Self.FK_dbo_SaleOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" FromRole="GoodsInfos" ToRole="SaleOrderDetails" />
+    <NavigationProperty Name="SupplyOrderDetails" Relationship="Self.FK_dbo_SupplyOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" FromRole="GoodsInfos" ToRole="SupplyOrderDetails" />
+  </EntityType>
+  <EntityType Name="GoodsSale">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ContractDetailId" Type="Guid" Nullable="false" />
+    <Property Name="GoodsInfoId" Type="Guid" Nullable="false" />
+    <Property Name="SaleCount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ContractDetails" Relationship="Self.FK_dbo_ContractDetails_dbo_GoodsSales_GoodsSale_Id" FromRole="GoodsSales" ToRole="ContractDetails" />
+  </EntityType>
+  <EntityType Name="GoodsType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Incubator">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PurchaserId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationCharger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VerificationExeChanger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keeper" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QualityKeeper" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="SN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BrandModel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Volume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Accendant" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExternalSize" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InternalSize" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WallThickness" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExternalMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InternalMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IceBrand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IceCount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Purchaser" Relationship="Self.FK_dbo_Incubators_dbo_Purchasers_PurchaserId" FromRole="Incubators" ToRole="Purchasers" />
+  </EntityType>
+  <EntityType Name="IncubatorVerification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContractId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationId" Type="Guid" Nullable="false" />
+    <Property Name="VTStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VTStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EnvMaxTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IncubatorId" Type="Guid" Nullable="false" />
+    <Property Name="VTProperty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UnpackTestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UnpackTestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OuterEnvironment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TestCard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AverageDeviation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="VTAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IncubatorVerifySolution">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContractId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationId" Type="Guid" Nullable="false" />
+    <Property Name="IncubatorId" Type="Guid" Nullable="false" />
+    <Property Name="VTStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VTStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataAnaStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataAnaStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InternalAuditStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InternalAuditStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="stationPointAvg" Type="Int32" Nullable="false" />
+    <Property Name="stationPointSpe" Type="Int32" Nullable="false" />
+    <Property Name="EnvTempTestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EnvTempTestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EnvMaxTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FullLoadStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FullLoadStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OpenDoorTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CardNo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardNo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TerminalNo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TerminalNo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AvgDifferCTNo1" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTNo2" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTMax" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PowerCutStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PowerCutTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutThermoTime" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="InInventoryDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProductDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Batch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GoodsInfosId" Type="Guid" Nullable="false" />
+    <Property Name="SupplyUnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="InventoryCount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SupplyOrderDetailsId" Type="Guid" Nullable="false" />
+    <Property Name="SupplyOrderId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="GoodsInfo" Relationship="Self.FK_dbo_Inventories_dbo_GoodsInfos_GoodsInfosId" FromRole="Inventories" ToRole="GoodsInfos" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ContractId" Type="Guid" Nullable="false" />
+    <Property Name="PayDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PayedMoney" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsInvoiced" Type="Boolean" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Contract" Relationship="Self.FK_dbo_Invoices_dbo_Contracts_ContractId" FromRole="Invoices" ToRole="Contracts" />
+  </EntityType>
+  <EntityType Name="LogInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="LogContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LogName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Pid" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Args" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PIndex" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OATask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PurchaseId" Type="Guid" Nullable="false" />
+    <Property Name="TaskName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Excutor" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="CUsers" Relationship="Self.FK_dbo_CUsers_dbo_Positions_PositionId" FromRole="Positions" ToRole="CUsers" />
+  </EntityType>
+  <EntityType Name="Purchaser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Charger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Contactor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tel1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tel2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="RemoteUserId" Type="Guid" Nullable="false" />
+    <Property Name="DataDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileInfoId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ColdStorages" Relationship="Self.FK_dbo_ColdStorages_dbo_Purchasers_PurchaserId" FromRole="Purchasers" ToRole="ColdStorages" />
+    <NavigationProperty Name="Incubators" Relationship="Self.FK_dbo_Incubators_dbo_Purchasers_PurchaserId" FromRole="Purchasers" ToRole="Incubators" />
+    <NavigationProperty Name="Refrigerators" Relationship="Self.FK_dbo_Refrigerators_dbo_Purchasers_PurchaserId" FromRole="Purchasers" ToRole="Refrigerators" />
+    <NavigationProperty Name="SaleOrders" Relationship="Self.FK_dbo_SaleOrders_dbo_Purchasers_PurchasersId" FromRole="Purchasers" ToRole="SaleOrders" />
+  </EntityType>
+  <EntityType Name="Refrigerator">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PurchaserId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationCharger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VerificationExeChanger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Keeper" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QualityKeeper" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="PlateNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BrandModel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RefrigeratingSystemFactory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CarriageDimension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Driver" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SpecificationVolume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DataDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Purchaser" Relationship="Self.FK_dbo_Refrigerators_dbo_Purchasers_PurchaserId" FromRole="Refrigerators" ToRole="Purchasers" />
+  </EntityType>
+  <EntityType Name="RefrigeratorVerification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContractId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationId" Type="Guid" Nullable="false" />
+    <Property Name="RefrigeratorId" Type="Guid" Nullable="false" />
+    <Property Name="VTStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VTStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="stationPointAvg" Type="Int32" Nullable="false" />
+    <Property Name="stationPointSpe" Type="Int32" Nullable="false" />
+    <Property Name="EnvTempTestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EnvTempTestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EnvMaxTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvMinTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="EnvAvgTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FullLoadStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FullLoadStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OpenDoorTestTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CardNo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardNo2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AvgDifferCTNo1" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTNo2" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AvgDifferCTMax" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PowerCutStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="VTTarget" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EnvironmentPointSpe" Type="Int32" Nullable="false" />
+    <Property Name="PowerCutEnvironmentTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PowerCutInnerTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="LowerLimit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DifferenceValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Interval" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TriggerAlarmTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InitTemp" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CoolingStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CoolingStopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReportDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Field5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RefrigeratorVerifySolution">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="DocumentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContractId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationId" Type="Guid" Nullable="false" />
+    <Property Name="RefrigeratorId" Type="Guid" Nullable="false" />
+    <Property Name="stationPointAvg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="stationPointSpe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="PlanVerifyDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VerifyDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VerifyCharacter" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="RoleWithUsers" Relationship="Self.FK_dbo_RoleWithUsers_dbo_Roles_RoleId" FromRole="Roles" ToRole="RoleWithUsers" />
+  </EntityType>
+  <EntityType Name="RoleWithMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="MenuId" Type="Guid" Nullable="false" />
+    <Property Name="BusinessAuthValue" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleWithUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="CUser" Relationship="Self.FK_dbo_RoleWithUsers_dbo_CUsers_UserId" FromRole="RoleWithUsers" ToRole="CUsers" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_dbo_RoleWithUsers_dbo_Roles_RoleId" FromRole="RoleWithUsers" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="SaleOrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="GoodsInfos" Type="Guid" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SupplyPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GoodsCount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SaleOrdersId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="GoodsInfo_Id" Type="Guid" />
+    <NavigationProperty Name="GoodsInfo" Relationship="Self.FK_dbo_SaleOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" FromRole="SaleOrderDetails" ToRole="GoodsInfos" />
+    <NavigationProperty Name="SaleOrder" Relationship="Self.FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId" FromRole="SaleOrderDetails" ToRole="SaleOrders" />
+  </EntityType>
+  <EntityType Name="SaleOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="SaleOrderCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GoodsCount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PurchasersId" Type="Guid" Nullable="false" />
+    <Property Name="SaleOrderStatusValue" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Purchaser" Relationship="Self.FK_dbo_SaleOrders_dbo_Purchasers_PurchasersId" FromRole="SaleOrders" ToRole="Purchasers" />
+    <NavigationProperty Name="SaleOrderDetails" Relationship="Self.FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId" FromRole="SaleOrders" ToRole="SaleOrderDetails" />
+  </EntityType>
+  <EntityType Name="ShortMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ReceiveUserId" Type="Guid" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsRead" Type="Boolean" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusField">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FieldName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplyer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Charger" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Contactor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tel1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tel2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="SupplyOrders" Relationship="Self.FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId" FromRole="Supplyers" ToRole="SupplyOrders" />
+  </EntityType>
+  <EntityType Name="SupplyOrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="GoodsInfos" Type="Guid" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GoodsCount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SupplyOrdersId" Type="Guid" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="GoodsInfo_Id" Type="Guid" />
+    <NavigationProperty Name="GoodsInfo" Relationship="Self.FK_dbo_SupplyOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" FromRole="SupplyOrderDetails" ToRole="GoodsInfos" />
+    <NavigationProperty Name="SupplyOrder" Relationship="Self.FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId" FromRole="SupplyOrderDetails" ToRole="SupplyOrders" />
+  </EntityType>
+  <EntityType Name="SupplyOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="OrderCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="GoodsCount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SupplyersId" Type="Guid" Nullable="false" />
+    <Property Name="SupplyStatusValue" Type="Int32" Nullable="false" />
+    <Property Name="ArrivalDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Supplyer" Relationship="Self.FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId" FromRole="SupplyOrders" ToRole="Supplyers" />
+    <NavigationProperty Name="SupplyOrderDetails" Relationship="Self.FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId" FromRole="SupplyOrders" ToRole="SupplyOrderDetails" />
+  </EntityType>
+  <EntityType Name="Sys_Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ParentId" Type="Guid" />
+    <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SortCode" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_ItemsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ItemId" Type="Guid" />
+    <Property Name="ParentId" Type="Guid" />
+    <Property Name="ItemCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ItemValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+    <Property Name="SortCode" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserPower">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="ItemsDetailID" Type="Guid" Nullable="false" />
+    <Property Name="ItemsDetailName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Verification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="ContractDetailId" Type="Guid" Nullable="false" />
+    <Property Name="SchemeFileId" Type="Guid" Nullable="false" />
+    <Property Name="SchemeUserId" Type="Guid" Nullable="false" />
+    <Property Name="SchemeMemo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SchemeDatetime" Type="DateTime" Precision="3" />
+    <Property Name="ExecuteTime" Type="DateTime" Precision="3" />
+    <Property Name="ExecuteDataFileId" Type="Guid" Nullable="false" />
+    <Property Name="ExecuteMemo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReporterId" Type="Guid" Nullable="false" />
+    <Property Name="VerificationFileInfoId" Type="Guid" Nullable="false" />
+    <Property Name="ReportMemo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReportDatetime" Type="DateTime" Precision="3" />
+    <Property Name="VerificationTypeId" Type="Guid" Nullable="false" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <Property Name="VerifiactionTimes" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VerifiactionStatusValue" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+    <Property Name="OriginalVerifyDataFileId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="ContractDetails" Relationship="Self.FK_dbo_ContractDetails_dbo_Verifications_Verification_Id" FromRole="Verifications" ToRole="ContractDetails" />
+  </EntityType>
+  <EntityType Name="VerificationType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VeryficationCharacter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="AttachmentTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUid" Type="Guid" Nullable="false" />
+    <Property Name="UpdateUid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_ApprovalFlowNodes_dbo_ApprovalFlows_FlowID">
+    <End Role="ApprovalFlows" Type="Self.ApprovalFlow" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ApprovalFlowNodes" Type="Self.ApprovalFlowNode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApprovalFlows">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApprovalFlowNodes">
+        <PropertyRef Name="FlowID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BookMarks_dbo_CustomTemplates_CustomTemplateId">
+    <End Role="CustomTemplates" Type="Self.CustomTemplate" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BookMarks" Type="Self.BookMark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomTemplates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookMarks">
+        <PropertyRef Name="CustomTemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChartMappings_dbo_CustomTemplates_CustomTemplateId">
+    <End Role="CustomTemplates" Type="Self.CustomTemplate" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChartMappings" Type="Self.ChartMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomTemplates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChartMappings">
+        <PropertyRef Name="CustomTemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ColdStorages_dbo_Purchasers_PurchaserId">
+    <End Role="Purchasers" Type="Self.Purchaser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ColdStorages" Type="Self.ColdStorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchasers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ColdStorages">
+        <PropertyRef Name="PurchaserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Fans_dbo_ColdStorages_ColdStorageId">
+    <End Role="ColdStorages" Type="Self.ColdStorage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Fans" Type="Self.Fan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ColdStorages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Fans">
+        <PropertyRef Name="ColdStorageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ContractDetails_dbo_Contracts_ContractId">
+    <End Role="Contracts" Type="Self.Contract" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ContractDetails" Type="Self.ContractDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contracts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractDetails">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ContractDetails_dbo_GoodsSales_GoodsSale_Id">
+    <End Role="GoodsSales" Type="Self.GoodsSale" Multiplicity="0..1" />
+    <End Role="ContractDetails" Type="Self.ContractDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoodsSales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractDetails">
+        <PropertyRef Name="GoodsSale_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ContractDetails_dbo_Verifications_Verification_Id">
+    <End Role="Verifications" Type="Self.Verification" Multiplicity="0..1" />
+    <End Role="ContractDetails" Type="Self.ContractDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Verifications">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractDetails">
+        <PropertyRef Name="Verification_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Invoices_dbo_Contracts_ContractId">
+    <End Role="Contracts" Type="Self.Contract" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Invoices" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contracts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CUsers_dbo_Employees_EmployeeId">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CUsers" Type="Self.CUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CUsers">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CUsers_dbo_Positions_PositionId">
+    <End Role="Positions" Type="Self.Position" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CUsers" Type="Self.CUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CUsers">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RoleWithUsers_dbo_CUsers_UserId">
+    <End Role="CUsers" Type="Self.CUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleWithUsers" Type="Self.RoleWithUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleWithUsers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Inventories_dbo_GoodsInfos_GoodsInfosId">
+    <End Role="GoodsInfos" Type="Self.GoodsInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Inventories" Type="Self.Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoodsInfos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Inventories">
+        <PropertyRef Name="GoodsInfosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SaleOrderDetails_dbo_GoodsInfos_GoodsInfo_Id">
+    <End Role="GoodsInfos" Type="Self.GoodsInfo" Multiplicity="0..1" />
+    <End Role="SaleOrderDetails" Type="Self.SaleOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoodsInfos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleOrderDetails">
+        <PropertyRef Name="GoodsInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SupplyOrderDetails_dbo_GoodsInfos_GoodsInfo_Id">
+    <End Role="GoodsInfos" Type="Self.GoodsInfo" Multiplicity="0..1" />
+    <End Role="SupplyOrderDetails" Type="Self.SupplyOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GoodsInfos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupplyOrderDetails">
+        <PropertyRef Name="GoodsInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Incubators_dbo_Purchasers_PurchaserId">
+    <End Role="Purchasers" Type="Self.Purchaser" Multiplicity="1" />
+    <End Role="Incubators" Type="Self.Incubator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchasers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incubators">
+        <PropertyRef Name="PurchaserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Refrigerators_dbo_Purchasers_PurchaserId">
+    <End Role="Purchasers" Type="Self.Purchaser" Multiplicity="1" />
+    <End Role="Refrigerators" Type="Self.Refrigerator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchasers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Refrigerators">
+        <PropertyRef Name="PurchaserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SaleOrders_dbo_Purchasers_PurchasersId">
+    <End Role="Purchasers" Type="Self.Purchaser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SaleOrders" Type="Self.SaleOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchasers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleOrders">
+        <PropertyRef Name="PurchasersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RoleWithUsers_dbo_Roles_RoleId">
+    <End Role="Roles" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RoleWithUsers" Type="Self.RoleWithUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RoleWithUsers">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId">
+    <End Role="SaleOrders" Type="Self.SaleOrder" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SaleOrderDetails" Type="Self.SaleOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleOrders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleOrderDetails">
+        <PropertyRef Name="SaleOrdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId">
+    <End Role="Supplyers" Type="Self.Supplyer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SupplyOrders" Type="Self.SupplyOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplyers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupplyOrders">
+        <PropertyRef Name="SupplyersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId">
+    <End Role="SupplyOrders" Type="Self.SupplyOrder" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SupplyOrderDetails" Type="Self.SupplyOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SupplyOrders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupplyOrderDetails">
+        <PropertyRef Name="SupplyOrdersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DQDocEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="ApprovalFlowNodes" EntityType="Self.ApprovalFlowNode" />
+    <EntitySet Name="ApprovalFlowRecords" EntityType="Self.ApprovalFlowRecord" />
+    <EntitySet Name="ApprovalFlows" EntityType="Self.ApprovalFlow" />
+    <EntitySet Name="ArchivesContentFileMappings" EntityType="Self.ArchivesContentFileMapping" />
+    <EntitySet Name="ArchivesFileCatalogues" EntityType="Self.ArchivesFileCatalogue" />
+    <EntitySet Name="ArchivesFiles" EntityType="Self.ArchivesFile" />
+    <EntitySet Name="ArchivesFileWarehouses" EntityType="Self.ArchivesFileWarehous" />
+    <EntitySet Name="Attachments" EntityType="Self.Attachment" />
+    <EntitySet Name="AttachmentTypes" EntityType="Self.AttachmentType" />
+    <EntitySet Name="BookMarks" EntityType="Self.BookMark" />
+    <EntitySet Name="CalibrationRecords" EntityType="Self.CalibrationRecord" />
+    <EntitySet Name="CalibrationRecordTemps" EntityType="Self.CalibrationRecordTemp" />
+    <EntitySet Name="Calibrations" EntityType="Self.Calibration" />
+    <EntitySet Name="ChartMappings" EntityType="Self.ChartMapping" />
+    <EntitySet Name="ColdStorages" EntityType="Self.ColdStorage" />
+    <EntitySet Name="ColdStoreVerifications" EntityType="Self.ColdStoreVerification" />
+    <EntitySet Name="ColdStoreVerifySolutions" EntityType="Self.ColdStoreVerifySolution" />
+    <EntitySet Name="CommonDevices" EntityType="Self.CommonDevice" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="ContractDetails" EntityType="Self.ContractDetail" />
+    <EntitySet Name="Contracts" EntityType="Self.Contract" />
+    <EntitySet Name="CUsers" EntityType="Self.CUser" />
+    <EntitySet Name="CustomBookMarks" EntityType="Self.CustomBookMark" />
+    <EntitySet Name="CustomFields" EntityType="Self.CustomField" />
+    <EntitySet Name="CustomTemplates" EntityType="Self.CustomTemplate" />
+    <EntitySet Name="DataYears" EntityType="Self.DataYear" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Documents" EntityType="Self.Document" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Fans" EntityType="Self.Fan" />
+    <EntitySet Name="FieldMappings" EntityType="Self.FieldMapping" />
+    <EntitySet Name="FieldValueMappings" EntityType="Self.FieldValueMapping" />
+    <EntitySet Name="FileInfoes" EntityType="Self.FileInfo" />
+    <EntitySet Name="GoodsInfos" EntityType="Self.GoodsInfo" />
+    <EntitySet Name="GoodsSales" EntityType="Self.GoodsSale" />
+    <EntitySet Name="GoodsTypes" EntityType="Self.GoodsType" />
+    <EntitySet Name="Incubators" EntityType="Self.Incubator" />
+    <EntitySet Name="IncubatorVerifications" EntityType="Self.IncubatorVerification" />
+    <EntitySet Name="IncubatorVerifySolutions" EntityType="Self.IncubatorVerifySolution" />
+    <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+    <EntitySet Name="LogInfoes" EntityType="Self.LogInfo" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="OATasks" EntityType="Self.OATask" />
+    <EntitySet Name="Positions" EntityType="Self.Position" />
+    <EntitySet Name="Purchasers" EntityType="Self.Purchaser" />
+    <EntitySet Name="Refrigerators" EntityType="Self.Refrigerator" />
+    <EntitySet Name="RefrigeratorVerifications" EntityType="Self.RefrigeratorVerification" />
+    <EntitySet Name="RefrigeratorVerifySolutions" EntityType="Self.RefrigeratorVerifySolution" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="RoleWithMenus" EntityType="Self.RoleWithMenu" />
+    <EntitySet Name="RoleWithUsers" EntityType="Self.RoleWithUser" />
+    <EntitySet Name="SaleOrderDetails" EntityType="Self.SaleOrderDetail" />
+    <EntitySet Name="SaleOrders" EntityType="Self.SaleOrder" />
+    <EntitySet Name="ShortMessages" EntityType="Self.ShortMessage" />
+    <EntitySet Name="StatusFields" EntityType="Self.StatusField" />
+    <EntitySet Name="Supplyers" EntityType="Self.Supplyer" />
+    <EntitySet Name="SupplyOrderDetails" EntityType="Self.SupplyOrderDetail" />
+    <EntitySet Name="SupplyOrders" EntityType="Self.SupplyOrder" />
+    <EntitySet Name="Sys_Items" EntityType="Self.Sys_Items" />
+    <EntitySet Name="Sys_ItemsDetail" EntityType="Self.Sys_ItemsDetail" />
+    <EntitySet Name="UserPowers" EntityType="Self.UserPower" />
+    <EntitySet Name="Verifications" EntityType="Self.Verification" />
+    <EntitySet Name="VerificationTypes" EntityType="Self.VerificationType" />
+    <EntitySet Name="VeryficationCharacters" EntityType="Self.VeryficationCharacter" />
+    <AssociationSet Name="FK_dbo_ApprovalFlowNodes_dbo_ApprovalFlows_FlowID" Association="Self.FK_dbo_ApprovalFlowNodes_dbo_ApprovalFlows_FlowID">
+      <End Role="ApprovalFlows" EntitySet="ApprovalFlows" />
+      <End Role="ApprovalFlowNodes" EntitySet="ApprovalFlowNodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BookMarks_dbo_CustomTemplates_CustomTemplateId" Association="Self.FK_dbo_BookMarks_dbo_CustomTemplates_CustomTemplateId">
+      <End Role="CustomTemplates" EntitySet="CustomTemplates" />
+      <End Role="BookMarks" EntitySet="BookMarks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChartMappings_dbo_CustomTemplates_CustomTemplateId" Association="Self.FK_dbo_ChartMappings_dbo_CustomTemplates_CustomTemplateId">
+      <End Role="CustomTemplates" EntitySet="CustomTemplates" />
+      <End Role="ChartMappings" EntitySet="ChartMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ColdStorages_dbo_Purchasers_PurchaserId" Association="Self.FK_dbo_ColdStorages_dbo_Purchasers_PurchaserId">
+      <End Role="Purchasers" EntitySet="Purchasers" />
+      <End Role="ColdStorages" EntitySet="ColdStorages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Fans_dbo_ColdStorages_ColdStorageId" Association="Self.FK_dbo_Fans_dbo_ColdStorages_ColdStorageId">
+      <End Role="ColdStorages" EntitySet="ColdStorages" />
+      <End Role="Fans" EntitySet="Fans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ContractDetails_dbo_Contracts_ContractId" Association="Self.FK_dbo_ContractDetails_dbo_Contracts_ContractId">
+      <End Role="Contracts" EntitySet="Contracts" />
+      <End Role="ContractDetails" EntitySet="ContractDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ContractDetails_dbo_GoodsSales_GoodsSale_Id" Association="Self.FK_dbo_ContractDetails_dbo_GoodsSales_GoodsSale_Id">
+      <End Role="GoodsSales" EntitySet="GoodsSales" />
+      <End Role="ContractDetails" EntitySet="ContractDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ContractDetails_dbo_Verifications_Verification_Id" Association="Self.FK_dbo_ContractDetails_dbo_Verifications_Verification_Id">
+      <End Role="Verifications" EntitySet="Verifications" />
+      <End Role="ContractDetails" EntitySet="ContractDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Invoices_dbo_Contracts_ContractId" Association="Self.FK_dbo_Invoices_dbo_Contracts_ContractId">
+      <End Role="Contracts" EntitySet="Contracts" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CUsers_dbo_Employees_EmployeeId" Association="Self.FK_dbo_CUsers_dbo_Employees_EmployeeId">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="CUsers" EntitySet="CUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CUsers_dbo_Positions_PositionId" Association="Self.FK_dbo_CUsers_dbo_Positions_PositionId">
+      <End Role="Positions" EntitySet="Positions" />
+      <End Role="CUsers" EntitySet="CUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RoleWithUsers_dbo_CUsers_UserId" Association="Self.FK_dbo_RoleWithUsers_dbo_CUsers_UserId">
+      <End Role="CUsers" EntitySet="CUsers" />
+      <End Role="RoleWithUsers" EntitySet="RoleWithUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Inventories_dbo_GoodsInfos_GoodsInfosId" Association="Self.FK_dbo_Inventories_dbo_GoodsInfos_GoodsInfosId">
+      <End Role="GoodsInfos" EntitySet="GoodsInfos" />
+      <End Role="Inventories" EntitySet="Inventories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SaleOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" Association="Self.FK_dbo_SaleOrderDetails_dbo_GoodsInfos_GoodsInfo_Id">
+      <End Role="GoodsInfos" EntitySet="GoodsInfos" />
+      <End Role="SaleOrderDetails" EntitySet="SaleOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SupplyOrderDetails_dbo_GoodsInfos_GoodsInfo_Id" Association="Self.FK_dbo_SupplyOrderDetails_dbo_GoodsInfos_GoodsInfo_Id">
+      <End Role="GoodsInfos" EntitySet="GoodsInfos" />
+      <End Role="SupplyOrderDetails" EntitySet="SupplyOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Incubators_dbo_Purchasers_PurchaserId" Association="Self.FK_dbo_Incubators_dbo_Purchasers_PurchaserId">
+      <End Role="Purchasers" EntitySet="Purchasers" />
+      <End Role="Incubators" EntitySet="Incubators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Refrigerators_dbo_Purchasers_PurchaserId" Association="Self.FK_dbo_Refrigerators_dbo_Purchasers_PurchaserId">
+      <End Role="Purchasers" EntitySet="Purchasers" />
+      <End Role="Refrigerators" EntitySet="Refrigerators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SaleOrders_dbo_Purchasers_PurchasersId" Association="Self.FK_dbo_SaleOrders_dbo_Purchasers_PurchasersId">
+      <End Role="Purchasers" EntitySet="Purchasers" />
+      <End Role="SaleOrders" EntitySet="SaleOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RoleWithUsers_dbo_Roles_RoleId" Association="Self.FK_dbo_RoleWithUsers_dbo_Roles_RoleId">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RoleWithUsers" EntitySet="RoleWithUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId" Association="Self.FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId">
+      <End Role="SaleOrders" EntitySet="SaleOrders" />
+      <End Role="SaleOrderDetails" EntitySet="SaleOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId" Association="Self.FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId">
+      <End Role="Supplyers" EntitySet="Supplyers" />
+      <End Role="SupplyOrders" EntitySet="SupplyOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId" Association="Self.FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId">
+      <End Role="SupplyOrders" EntitySet="SupplyOrders" />
+      <End Role="SupplyOrderDetails" EntitySet="SupplyOrderDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

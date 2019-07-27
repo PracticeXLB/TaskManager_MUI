@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DigitalChaohuDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="FractureSurfaceInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FractureSurfaceName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FractureSurfaceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="AppType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SiteInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SiteCode" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="AlertWaterLevel" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EnsureWaterLevel" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AppType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="BelongToRiver" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DigitalChaohuDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FractureSurfaceInfoes" EntityType="Self.FractureSurfaceInfo" />
+    <EntitySet Name="SiteInfoes" EntityType="Self.SiteInfo" />
+    <EntitySet Name="WaterLevelHistories" EntityType="DigitalChaohuDbModel.WaterLevelHistory" />
+    <EntitySet Name="WaterLevelRealtimes" EntityType="DigitalChaohuDbModel.WaterLevelRealtime" />
+    <EntitySet Name="WaterQualities" EntityType="DigitalChaohuDbModel.WaterQuality" />
+    <EntitySet Name="WeatherDatas" EntityType="DigitalChaohuDbModel.WeatherData" />
+    <EntitySet Name="BlueAlgaes" EntityType="DigitalChaohuDbModel.BlueAlgae" />
+    <EntitySet Name="RainFalls" EntityType="DigitalChaohuDbModel.RainFall" />
+    <EntitySet Name="Waterlevels" EntityType="DigitalChaohuDbModel.Waterlevel" />
+  </EntityContainer>
+  <EntityType Name="WaterLevelHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteId" Type="Int32" />
+    <Property Name="WaterLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlowRate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Record_time" Type="DateTime" Precision="3" />
+    <Property Name="station_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WaterLevelRealtime">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteId" Type="Int32" />
+    <Property Name="WaterLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FlowRate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Record_time" Type="DateTime" Precision="3" />
+    <Property Name="station_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WaterQuality">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tn" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="tp" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="nh4" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="cod" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="record_time" Type="DateTime" Precision="3" />
+    <Property Name="station_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SiteId" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="viewtype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WeatherData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="record_time" Type="DateTime" Precision="3" />
+    <Property Name="ws" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="wo" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="t" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="r" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="BlueAlgae">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="D_level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PicUrl" Type="String" MaxLength="310" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="510" FixedLength="false" Unicode="false" />
+    <Property Name="to_timestamp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="year" Type="Int32" />
+    <Property Name="month" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RainFall">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="month_rainfall" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="year_rainfall" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="day_rainfall" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="rainfall1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="record_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Waterlevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="warninglevel" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="guaranteedlevel" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="waterlevel1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="record_time" Type="DateTime" Precision="3" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

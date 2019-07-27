@@ -1,0 +1,13 @@
+D:\DQ\数字巢湖\DigitalChaohuWeb\bin\DigitalChaohuWeb.dll.config
+D:\DQ\数字巢湖\DigitalChaohuWeb\bin\DigitalChaohuWeb.dll
+D:\DQ\数字巢湖\DigitalChaohuWeb\bin\DigitalChaohuWeb.pdb
+D:\DQ\数字巢湖\DigitalChaohuWeb\bin\EntityFramework.dll
+D:\DQ\数字巢湖\DigitalChaohuWeb\bin\Newtonsoft.Json.dll
+D:\DQ\数字巢湖\DigitalChaohuWeb\bin\EntityFramework.xml
+D:\DQ\数字巢湖\DigitalChaohuWeb\bin\Newtonsoft.Json.xml
+D:\DQ\数字巢湖\DigitalChaohuWeb\bin\zh-Hans\EntityFramework.resources.dll
+D:\DQ\数字巢湖\DigitalChaohuWeb\obj\Debug\DigitalChaohuWeb.csproj.CoreCompileInputs.cache
+D:\DQ\数字巢湖\DigitalChaohuWeb\obj\Debug\DigitalChaohuWeb.csproj.CopyComplete
+D:\DQ\数字巢湖\DigitalChaohuWeb\obj\Debug\DigitalChaohuWeb.dll
+D:\DQ\数字巢湖\DigitalChaohuWeb\obj\Debug\DigitalChaohuWeb.pdb
+D:\DQ\数字巢湖\DigitalChaohuWeb\obj\Debug\DigitalChaohuWeb.csprojAssemblyReference.cache

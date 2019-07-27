@@ -1,0 +1,61 @@
+.ui-page-login,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.mui-content {
+    height: 100%;
+}
+
+.title {
+    margin: 20px 15px 10px;
+    color: #6d6d72;
+    font-size: 15px;
+}
+
+.oa-contact-cell.mui-table .mui-table-cell {
+    padding: 11px 0;
+    vertical-align: middle;
+}
+
+.oa-contact-cell {
+    position: relative;
+    margin: -11px 0;
+}
+
+.oa-contact-avatar {
+    width: 75px;
+}
+
+    .oa-contact-avatar img {
+        border-radius: 50%;
+    }
+
+.oa-contact-content {
+    width: 100%;
+}
+
+.oa-contact-name {
+    margin-right: 20px;
+}
+
+.oa-contact-name, oa-contact-position {
+    float: left;
+}
+
+#map .ol-zoom .ol-zoom-out {
+    margin-top: 204px;
+}
+
+#map .ol-zoomslider {
+    background-color: transparent;
+    top: 2.3em;
+}
+
+#map .ol-zoom-extent {
+    top: 280px;
+}
+
