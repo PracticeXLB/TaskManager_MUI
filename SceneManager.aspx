@@ -19,15 +19,34 @@
 <body>
     <form id="form1" runat="server">
         <header class="mui-bar mui-bar-nav">
-            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="Default.aspx"></a>
             <h1 class="mui-title">任务管理</h1>
         </header>
+
+        <div class="mui-content">
+            <div style="margin-top: 3px; margin-left: 3px;">
+
+                <button id='btnbegindate' data-options='{"type":"date"}' onclick="return false;" class="btn mui-btn" runat="server">选择开始时间</button>
+                <label>-</label>
+                <button id='btnenddate' data-options='{"type":"date"}' onclick="return false;" class="btn mui-btn" runat="server">选择结束时间</button>
+                <button class="mui-btn mui-btn-primary" type="button" id="btnsearch" onserverclick="btnsearch_Click" runat="server">搜索</button>
+            </div>
+            <ul class="mui-table-view">
+                <asp:Repeater runat="server" ID="Tasks">
+                    <ItemTemplate>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right" href="TaskSceneHandle.aspx.aspx?taskid=<%#Eval("Id")%>"><%#Eval("TaskName")%>(<%#Eval("Status")%>)
+                            </a>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
+        </div>
         <script src="../js/mui.min.js"></script>
         <script src="../js/mui.picker.min.js"></script>
         <script>
             (function ($) {
                 $.init();
-
                 var btns = $('.btn');
                 btns.each(function (i, btn) {
                     btn.addEventListener('tap', function () {
@@ -81,10 +100,16 @@
         </script>
         <script>
             mui.init({
-                swipeBack: true //启用右滑关闭功能
+                swipeBack: true
             });
+            mui.back = function () {
+                var arr = location.href.split('#');
+                alert(arr[0]);
+                if (arr[0].indexOf('taskmanager.aspx') > 0) {
+                    location.href = "Default.aspx";
+                }
+            }
         </script>
-
     </form>
 </body>
 </html>

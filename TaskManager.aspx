@@ -31,18 +31,18 @@
                 <button id='btnenddate' data-options='{"type":"date"}' onclick="return false;" class="btn mui-btn" runat="server">选择结束时间</button>
                 <button class="mui-btn mui-btn-primary" type="button" id="btnsearch" onserverclick="btnsearch_Click" runat="server">搜索</button>
             </div>
+
+            <ul class="mui-table-view">
+                <asp:Repeater runat="server" ID="Tasks">
+                    <ItemTemplate>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right" href="Taskhandle.aspx?taskid=<%#Eval("Id")%>"><%#Eval("TaskName")%>(<%#Eval("Status")%>)
+                            </a>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
         </div>
-         
-        <ul class="mui-table-view">
-            <asp:Repeater runat="server" ID="Tasks">
-                <ItemTemplate>
-                    <li class="mui-table-view-cell">
-                        <a class="mui-navigate-right" href="Taskhandle.aspx?taskid=<%#Eval("Id")%>"><%#Eval("TaskName")%>(<%#Eval("Status")%>)
-					</a>
-                    </li>
-                </ItemTemplate>
-            </asp:Repeater>
-        </ul>
         <script src="../js/mui.min.js"></script>
         <script src="../js/mui.picker.min.js"></script>
         <script>

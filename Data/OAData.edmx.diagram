@@ -93,6 +93,7 @@
         <AssociationConnector Association="DQDocModel.FK_dbo_SaleOrderDetails_dbo_SaleOrders_SaleOrdersId" ManuallyRouted="false" />
         <AssociationConnector Association="DQDocModel.FK_dbo_SupplyOrders_dbo_Supplyers_SupplyersId" ManuallyRouted="false" />
         <AssociationConnector Association="DQDocModel.FK_dbo_SupplyOrderDetails_dbo_SupplyOrders_SupplyOrdersId" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DQDocModel.OATaskImg" Width="1.5" PointX="26.375" PointY="29.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

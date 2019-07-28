@@ -48,7 +48,6 @@ namespace OAMobileBackEnd
         {
             DQDocEntities dQDocEntities = new DQDocEntities();
             Guid taskid = Guid.Parse(hidTaskid.Value);
-            var d = Request.Form["btnstartdate"];
             var task = dQDocEntities.OATasks.FirstOrDefault(o => o.Id == taskid);
 
             DateTime dt = DateTime.Now;
@@ -64,16 +63,23 @@ namespace OAMobileBackEnd
             if (DateTime.TryParse(hidenddate.Value, out dt))
             {
                 task.EndTime = dt;
-                if (DateTime.Now > dt)
+                if (dt < DateTime.Now)
                 {
                     task.Status = "已结束";
                 }
             }
-            if (string.IsNullOrEmpty(txttaskremark.Value))
+            if (!string.IsNullOrEmpty(txttaskname.Value))
+            {
+                task.TaskName = txttaskname.Value;
+            }
+            if (!string.IsNullOrEmpty(txttaskremark.Value))
             {
                 task.Remark = txttaskremark.Value;
             }
-
+            if (!string.IsNullOrEmpty(txttaskcreator.Value))
+            {
+                task.Excutor = txttaskcreator.Value;
+            }
             dQDocEntities.SaveChanges();
 
             RefreshTaskInfo(taskid);

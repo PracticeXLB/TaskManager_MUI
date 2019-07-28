@@ -91,5 +91,6 @@ namespace OAMobileBackEnd.Data
         public DbSet<Verification> Verifications { get; set; }
         public DbSet<VerificationType> VerificationTypes { get; set; }
         public DbSet<VeryficationCharacter> VeryficationCharacters { get; set; }
+        public DbSet<OATaskImg> OATaskImgs { get; set; }
     }
 }

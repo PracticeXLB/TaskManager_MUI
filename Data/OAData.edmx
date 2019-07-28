@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DQDocModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="DQDocModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -904,6 +904,16 @@
           <Property Name="CreateTime" Type="datetime" />
           <Property Name="UpdateTime" Type="datetime" />
         </EntityType>
+        <EntityType Name="OATaskImg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BusinessId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ImgPath" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="UpdateTime" Type="datetime" />
+        </EntityType>
         <EntityType Name="Positions">
           <Key>
             <PropertyRef Name="Id" />
@@ -1638,6 +1648,7 @@
           <EntitySet Name="LogInfoes" EntityType="Self.LogInfoes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OATask" EntityType="Self.OATask" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OATaskImg" EntityType="Self.OATaskImg" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Purchasers" EntityType="Self.Purchasers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Refrigerators" EntityType="Self.Refrigerators" Schema="dbo" store:Type="Tables" />
@@ -1748,8 +1759,7 @@
             <End Role="SupplyOrders" EntitySet="SupplyOrders" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DQDocModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -3539,7 +3549,18 @@
             <End Role="SupplyOrders" EntitySet="SupplyOrders" />
             <End Role="SupplyOrderDetails" EntitySet="SupplyOrderDetails" />
           </AssociationSet>
+          <EntitySet Name="OATaskImgs" EntityType="DQDocModel.OATaskImg" />
         </EntityContainer>
+        <EntityType Name="OATaskImg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="BusinessId" Type="Guid" Nullable="false" />
+          <Property Name="ImgPath" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4899,6 +4920,17 @@
                 <ScalarProperty Name="Deleted" ColumnName="Deleted" />
                 <ScalarProperty Name="CreateUid" ColumnName="CreateUid" />
                 <ScalarProperty Name="UpdateUid" ColumnName="UpdateUid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OATaskImgs">
+            <EntityTypeMapping TypeName="DQDocModel.OATaskImg">
+              <MappingFragment StoreEntitySet="OATaskImg">
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+                <ScalarProperty Name="BusinessId" ColumnName="BusinessId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

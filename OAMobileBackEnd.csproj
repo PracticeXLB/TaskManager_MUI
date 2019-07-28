@@ -93,6 +93,7 @@
     <Content Include="imgs\lz1.png" />
     <Content Include="imgs\lz2.png" />
     <Content Include="imgs\qixiangbaogao.png" />
+    <Content Include="imgs\remove.jpeg" />
     <Content Include="imgs\u786.png" />
     <Content Include="js\calendar.js" />
     <Content Include="js\echarts-all.js" />
@@ -462,6 +463,7 @@
     <Content Include="ol\ol3-layerswitcher.js" />
     <Content Include="SceneManager.aspx" />
     <Content Include="NewTask.aspx" />
+    <Content Include="TaskSceneHandle.aspx" />
     <Content Include="TaskHandle.aspx" />
     <Content Include="TaskManager.aspx" />
     <Content Include="Site.Master" />
@@ -472,6 +474,7 @@
     <Content Include="Data\OAData.edmx.diagram">
       <DependentUpon>OAData.edmx</DependentUpon>
     </Content>
+    <Content Include="Handler1.ashx" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
@@ -648,6 +651,9 @@
     <Compile Include="Data\OATask.cs">
       <DependentUpon>OAData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\OATaskImg.cs">
+      <DependentUpon>OAData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\Position.cs">
       <DependentUpon>OAData.tt</DependentUpon>
     </Compile>
@@ -723,6 +729,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handler1.ashx.cs">
+      <DependentUpon>Handler1.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -744,6 +753,13 @@
     </Compile>
     <Compile Include="NewTask.aspx.designer.cs">
       <DependentUpon>NewTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaskSceneHandle.aspx.cs">
+      <DependentUpon>TaskSceneHandle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaskSceneHandle.aspx.designer.cs">
+      <DependentUpon>TaskSceneHandle.aspx</DependentUpon>
     </Compile>
     <Compile Include="TaskHandle.aspx.cs">
       <DependentUpon>TaskHandle.aspx</DependentUpon>

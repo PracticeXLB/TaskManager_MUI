@@ -11,3 +11,16 @@ D:\DQ\OAMobileBackEnd\obj\Debug\OAMobileBackEnd.csproj.CopyComplete
 D:\DQ\OAMobileBackEnd\obj\Debug\OAMobileBackEnd.dll
 D:\DQ\OAMobileBackEnd\obj\Debug\OAMobileBackEnd.pdb
 D:\DQ\OAMobileBackEnd\obj\Debug\OAMobileBackEnd.csprojAssemblyReference.cache
+D:\DQ\TaskManager_MUI\bin\OAMobileBackEnd.dll.config
+D:\DQ\TaskManager_MUI\bin\OAMobileBackEnd.dll
+D:\DQ\TaskManager_MUI\bin\OAMobileBackEnd.pdb
+D:\DQ\TaskManager_MUI\bin\EntityFramework.dll
+D:\DQ\TaskManager_MUI\bin\Newtonsoft.Json.dll
+D:\DQ\TaskManager_MUI\bin\EntityFramework.xml
+D:\DQ\TaskManager_MUI\bin\Newtonsoft.Json.xml
+D:\DQ\TaskManager_MUI\bin\zh-Hans\EntityFramework.resources.dll
+D:\DQ\TaskManager_MUI\obj\Debug\OAMobileBackEnd.csprojAssemblyReference.cache
+D:\DQ\TaskManager_MUI\obj\Debug\OAMobileBackEnd.csproj.CoreCompileInputs.cache
+D:\DQ\TaskManager_MUI\obj\Debug\OAMobileBackEnd.csproj.CopyComplete
+D:\DQ\TaskManager_MUI\obj\Debug\OAMobileBackEnd.dll
+D:\DQ\TaskManager_MUI\obj\Debug\OAMobileBackEnd.pdb

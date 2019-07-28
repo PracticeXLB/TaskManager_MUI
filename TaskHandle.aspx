@@ -21,27 +21,25 @@
             <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="TaskManger.aspx"></a>
             <h1 class="mui-title" id="titleh1" runat="server">任务处理</h1>
         </header>
-        <div class="mui-input-row">
-            <label>任务名称</label>
-            <input type="text" class="mui-input-clear" id="txttaskname" placeholder="任务名称" data-input-clear="3" runat="server" /><span class="mui-icon mui-icon-clear mui-hidden"></span>
-        </div>
-        <div class="mui-input-row">
-            <label>任务备注</label>
-            <input type="text" class="mui-input-clear" id="txttaskremark" placeholder="任务备注" data-input-clear="3" runat="server" /><span class="mui-icon mui-icon-clear mui-hidden"></span>
-        </div>
-        <div class="mui-input-row">
-            <label>创建人</label>
-            <input type="text" class="mui-input-clear" id="txttaskcreator" placeholder="创建人" data-input-clear="3" runat="server" /><span class="mui-icon mui-icon-clear mui-hidden"></span>
-        </div>
+        <div class="mui-content">
+            <div class="mui-input-row">
+                <label>任务名称</label>
+                <input type="text" class="mui-input-clear" id="txttaskname" placeholder="任务名称" data-input-clear="3" runat="server" /><span class="mui-icon mui-icon-clear mui-hidden"></span>
+            </div>
+            <div class="mui-input-row">
+                <label>任务备注</label>
+                <input type="text" class="mui-input-clear" id="txttaskremark" placeholder="任务备注" data-input-clear="3" runat="server" /><span class="mui-icon mui-icon-clear mui-hidden"></span>
+            </div>
+            <div class="mui-input-row">
+                <label>创建人</label>
+                <input type="text" class="mui-input-clear" id="txttaskcreator" placeholder="创建人" data-input-clear="3" runat="server" /><span class="mui-icon mui-icon-clear mui-hidden"></span>
+            </div>
+            <asp:HiddenField runat="server" ID="hidstartdate" />
+            <button id="btnstartdate" data-options='{"type":"date"}' onclick="return false;" class="btn mui-btn  mui-btn-block" runat="server">选择开始时间</button>
 
-        <asp:HiddenField runat="server" ID="hidstartdate" />
-        <asp:HiddenField runat="server" ID="hidenddate" />
+            <button id="btnenddate" data-options='{"type":"date"}' onclick="return false;" class="btn mui-btn  mui-btn-block" runat="server">选择结束时间</button>
+            <asp:HiddenField runat="server" ID="hidenddate" />
 
-        <button id="btnstartdate" data-options='{"type":"date"}' onclick="return false;" class="btn mui-btn  mui-btn-block" runat="server">选择开始时间</button>
-
-        <button id="btnenddate" data-options='{"type":"date"}'  onclick="return false;" class="btn mui-btn  mui-btn-block" runat="server">选择结束时间</button>
-
-        <div class="mui-button-row">
             <asp:HiddenField runat="server" ID="hidTaskid" />
             <button class="mui-btn mui-btn-primary mui-btn-block" type="button" id="btnsave" runat="server" onserverclick="btnsave1_Click">保存</button>
         </div>
